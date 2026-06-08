@@ -20,13 +20,13 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 12 | Master Data     | Customers             | /customers                     | ✅ | ✅ | ✅       | ✅       | 🟡       | list + form |
 | 13 | Master Data     | Vendors               | /vendors                       | ✅ | ✅ | ✅       | ✅       | 🟡       | list + form |
 | 14 | Master Data     | Payment Methods       | /payment-methods               | ✅ | ✅ | ✅       | ✅       | 🟡       | list |
-| 15 | Invoicing       | Sales Invoices        | /sales/invoices                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 16 | Invoicing       | Sales Credit Notes    | /sales/credit-notes            | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 17 | Invoicing       | Purchase Invoices     | /purchases/invoices            | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 18 | Invoicing       | Purchase Credit Notes | /purchases/credit-notes        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 19 | Invoicing       | Self-Billing          | /self-billing                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 20 | Invoicing       | Create / Edit Invoice | /invoices/new                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 21 | Invoicing       | View Invoice          | /invoices/:id                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 15 | Invoicing       | Sales Invoices        | /sales/invoices                | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 16 | Invoicing       | Sales Credit Notes    | /sales/credit-notes            | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 17 | Invoicing       | Purchase Invoices     | /purchases/invoices            | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 18 | Invoicing       | Purchase Credit Notes | /purchases/credit-notes        | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 19 | Invoicing       | Self-Billing          | /self-billing                  | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 20 | Invoicing       | Create / Edit Invoice | /invoices/new                  | ✅ | ✅ | ✅       | ✅       | 🟡       | empty form |
+| 21 | Invoicing       | View Invoice          | /invoices/:id                  | ✅ | ✅ | ✅       | ✅       | 🟡       | invoice #1038 |
 | 22 | Settings        | Company Profile       | /settings/company-profile      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
 | 23 | Settings        | Number Series         | /settings/number-series        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
 | 24 | Settings        | Company Auditors      | /settings/auditors             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |

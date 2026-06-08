@@ -1,0 +1,83 @@
+---
+title: "Create or Edit an Invoice"
+description: "Build a tax-compliant invoice or credit note line by line."
+---
+
+The invoice editor is where you create and edit documents — tax invoices,
+commercial invoices, and credit notes. It calculates VAT and totals as you go and
+validates against UAE PINT rules.
+
+<Frame>
+  <img src="/images/en/invoicing/create-invoice-1.png" alt="Fatorly new invoice editor" />
+</Frame>
+
+## Start a new document
+
+You can start from several places:
+
+- **Dashboard → Quick Actions** (e.g. New Tax Invoice).
+- **Sales Invoices → New Tax Invoice / New Commercial Invoice**.
+- **Sales Credit Notes → New Credit Note**.
+
+The document **category** (Tax Invoice, Commercial Invoice, Credit Note) and
+**direction** (Outbound / Inbound) are shown at the top.
+
+## Fill in the document
+
+<Steps>
+  <Step title="Set invoice details">
+    The **Invoice #** is assigned from your [number series](/en/settings/number-series).
+    Set the **Currency** (defaults to AED), **Issue Date**, and optional **Due Date**.
+  </Step>
+  <Step title="Select the customer">
+    Choose the buyer from **Select Customer**. Manage these in
+    [Customers](/en/master-data/customers).
+  </Step>
+  <Step title="Add line items">
+    Select **Add Line**, then pick an **Item** (this fills the name, unit of
+    measure, and unit price). Set **Quantity**, adjust **Unit Price** or
+    **Discount** if needed, and choose the **VAT Group**.
+  </Step>
+  <Step title="Set payment & notes">
+    Optionally choose a **Payment Method** and **Payment Terms**, and add
+    **Customer Notes / Remarks**.
+  </Step>
+  <Step title="Save">
+    Select **Save as Draft**. The document is saved and can be reviewed, then
+    submitted from the [invoice view](/en/invoicing/view-invoice).
+  </Step>
+</Steps>
+
+## Line item columns
+
+| Column | Description |
+|---|---|
+| Item Name | The product or service (from your item catalog). |
+| Description | Optional line description. |
+| Quantity | Number of units. |
+| Unit of Measure | UN/CEFACT unit (e.g. `EA`). |
+| Unit Price | Price per unit. |
+| Discount | Optional line discount. |
+| VAT Group | Tax category and rate (see below). |
+| Line Net | Calculated net amount for the line. |
+
+### VAT groups
+
+| Code | Rate | Meaning |
+|---|---|---|
+| S | 5% | Standard-rated |
+| Z | 0% | Zero-rated |
+| E | 0% | Exempt |
+| O | 0% | Out of scope |
+| AE | 0% | Reverse charge |
+| L | 0% | Special / other |
+
+## Totals
+
+The **Totals** panel updates live: Total Exclusive of VAT, Total Net, Total VAT
+(broken down per VAT group), and **Total Payable** in your currency.
+
+<Tip>
+Item, customer, and payment-method dropdowns are populated from your
+[master data](/en/master-data/items) — set those up first to speed up invoicing.
+</Tip>

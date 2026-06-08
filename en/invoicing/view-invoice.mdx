@@ -1,0 +1,54 @@
+---
+title: "View & Submit an Invoice"
+description: "Review a document, print it, and submit it over PEPPOL."
+---
+
+The invoice view shows a read-only summary of a document and the actions you can
+take on it — including submitting it to the PEPPOL network.
+
+<Frame>
+  <img src="/images/en/invoicing/view-invoice-1.png" alt="Fatorly invoice view" />
+</Frame>
+
+## Opening a document
+
+Select any invoice number or **View** from a list ([Sales
+Invoices](/en/invoicing/sales-invoices), Credit Notes, etc.), or a row in the
+dashboard's Recent Activity. The header shows the document **category**,
+**status**, **direction**, and number.
+
+## Actions
+
+| Action | What it does |
+|---|---|
+| Print / PDF | Generate a printable PDF of the document. |
+| Export Lines | Export the line items (e.g. to CSV). |
+| Duplicate | Create a new draft copy of this document. |
+| Submit | Send the document over the PEPPOL network. |
+| Edit | Open the document in the [editor](/en/invoicing/create-invoice) (drafts). |
+
+## What's shown
+
+- **Invoice Details** — number, currency, issue and due dates.
+- **Buyer** — the customer the document is addressed to.
+- **Line Items** — read-only table: item, quantity, unit price, discount, tax
+  category, VAT, and gross per line.
+- **Payment & Notes** — payment method and terms.
+- **Totals** — total exclusive of VAT, total VAT, and total payable.
+
+## Submitting
+
+<Steps>
+  <Step title="Review the document">
+    Check the buyer, line items, VAT, and totals are correct.
+  </Step>
+  <Step title="Select Submit">
+    Fatorly validates the document and sends it over PEPPOL. The status updates
+    (e.g. from Draft to Sent / Delivered).
+  </Step>
+</Steps>
+
+<Warning>
+Submission validates against UAE PINT rules. If validation fails, the document
+shows a failed status — open it, fix the reported issues, and submit again.
+</Warning>
