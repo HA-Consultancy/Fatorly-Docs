@@ -14,8 +14,8 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 6  | Getting Started | Verify Email          | /verify-email                  | ✅ | ✅ | ✅       | ✅       | 🟡       | error state (no token) |
 | 7  | Getting Started | Onboarding Wizard     | /onboarding                    | ✅ | ✅ | ✅       | ✅       | 🟡       | step 1; launched from EmaraTax |
 | 8  | Getting Started | MFA Setup             | /settings/mfa                  | ✅ | ✅ | ✅       | ✅       | 🟡       | QR+secret redacted |
-| 9  | Home            | Dashboard             | /                              | ⬜ | ⬜ | ⚠️dark   | ⬜       | ⬜       | re-capture in light |
-| 10 | Home            | What's New            | /whats-new                     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 9  | Home            | Dashboard             | /                              | ✅ | ✅ | ✅       | ✅       | 🟡       | light mode |
+| 10 | Home            | What's New            | /whats-new                     | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
 | 11 | Master Data     | Items                 | /items                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
 | 12 | Master Data     | Customers             | /customers                     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
 | 13 | Master Data     | Vendors               | /vendors                       | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
