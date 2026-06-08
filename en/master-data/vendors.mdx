@@ -1,0 +1,53 @@
+---
+title: "Vendors"
+description: "Manage the suppliers you receive invoices from."
+---
+
+Vendors are the suppliers you receive purchase invoices from and, where
+applicable, issue self-billed documents to. Their details flow onto purchase and
+self-billing documents.
+
+<Frame>
+  <img src="/images/en/master-data/vendors-1.png" alt="Fatorly vendors list" />
+</Frame>
+
+## The vendors list
+
+The list shows your vendors with **Search** and sortable columns, plus **Edit**
+and **Delete** actions on each row. Select **Add New** to create a vendor.
+
+## Add or edit a vendor
+
+<Steps>
+  <Step title="Open the form">
+    Select **Add New**, or **Edit** on an existing vendor.
+  </Step>
+  <Step title="Fill in the details">
+    Complete the sections below, then select **Save**.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/en/master-data/vendors-form-1.png" alt="Fatorly new vendor form" />
+</Frame>
+
+### Fields
+
+| Section | Field | Required | Description |
+|---|---|---|---|
+| Identity | Name (English) | Yes | Legal name in English. |
+| Identity | Name (Arabic) | Yes | Legal name in Arabic. |
+| Contact | Email | No | Vendor email. |
+| Contact | Phone | No | Vendor phone. |
+| Contact | VAT TRN | No | 15-digit UAE Tax Registration Number. |
+| Contact | Contact Person | No | Main contact name. |
+| Address | Address, City, Country | No | Physical location. Country defaults to `AE`. |
+| PEPPOL Network | PEPPOL Participant ID | No | Electronic exchange identifier (e.g. `iso6523-actorid-upis::0211:XXXXXXXXXX`). |
+
+New vendors are **Active** by default.
+
+<Tip>
+- Both English and Arabic names are required for e-invoice compliance.
+- The VAT TRN must be a valid 15-digit UAE tax registration number.
+- Add the PEPPOL Participant ID to enable direct electronic invoice delivery.
+</Tip>

@@ -1,0 +1,52 @@
+---
+title: "Items"
+description: "Manage the products and services you sell."
+---
+
+Items are the products and services you add to invoices. Maintaining an item
+catalog lets you add lines to invoices quickly and keeps pricing and bilingual
+names consistent.
+
+<Frame>
+  <img src="/images/en/master-data/items-1.png" alt="Fatorly items list" />
+</Frame>
+
+## The items list
+
+The list shows each item's **Code**, **Name**, **Unit Price**, and **Status**.
+Use the **Search** box to filter, and the column headers to sort. Each row has
+**Edit** and **Delete** actions.
+
+## Add or edit an item
+
+<Steps>
+  <Step title="Open the form">
+    Select **Add New** to create an item, or **Edit** on a row to change one.
+  </Step>
+  <Step title="Fill in the details">
+    Complete the fields below, then select **Save**.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/en/master-data/items-form-1.png" alt="Fatorly new item form" />
+</Frame>
+
+### Fields
+
+| Field | Required | Description |
+|---|---|---|
+| Code | Yes | Unique identifier for the item, used on invoices. |
+| Unit of Measure | Yes | UN/CEFACT unit code (for example `EA`, `KGM`, `LTR`). Defaults to `EA`. |
+| Name (English) | Yes | Item name shown on English invoices. |
+| Name (Arabic) | Yes | Item name shown on Arabic invoices. |
+| Unit Price | Yes | Default price per unit. |
+| Description | No | Optional longer description. |
+
+New items are **Active** by default.
+
+<Tip>
+- The item code must be unique — it identifies the item on invoices.
+- Unit of measure should follow UN/CEFACT codes (e.g. `EA`, `KGM`, `LTR`).
+- Both English and Arabic names appear on bilingual e-invoices, so fill in both.
+</Tip>

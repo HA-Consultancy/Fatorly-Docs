@@ -1,0 +1,53 @@
+---
+title: "Customers"
+description: "Manage the customers you issue invoices to."
+---
+
+Customers are the buyers you issue sales invoices and credit notes to. Their
+details — including VAT TRN and PEPPOL Participant ID — flow onto your invoices
+and enable electronic delivery.
+
+<Frame>
+  <img src="/images/en/master-data/customers-1.png" alt="Fatorly customers list" />
+</Frame>
+
+## The customers list
+
+The list shows your customers with **Search** and sortable columns. Each row has
+**Edit** and **Delete** actions. Select **Add New** to create a customer.
+
+## Add or edit a customer
+
+<Steps>
+  <Step title="Open the form">
+    Select **Add New**, or **Edit** on an existing customer.
+  </Step>
+  <Step title="Fill in the details">
+    Complete the sections below, then select **Save**.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/en/master-data/customers-form-1.png" alt="Fatorly new customer form" />
+</Frame>
+
+### Fields
+
+| Section | Field | Required | Description |
+|---|---|---|---|
+| Identity | Name (English) | Yes | Legal name in English. |
+| Identity | Name (Arabic) | Yes | Legal name in Arabic. |
+| Contact | Email | No | Customer email. |
+| Contact | Phone | No | Customer phone. |
+| Contact | VAT TRN | No | 15-digit UAE Tax Registration Number. |
+| Contact | Contact Person | No | Main contact name. |
+| Address | Address, City, Country | No | Physical location. Country defaults to `AE`. |
+| PEPPOL Network | PEPPOL Participant ID | No | Electronic exchange identifier for direct delivery. |
+
+New customers are **Active** by default.
+
+<Tip>
+- Both English and Arabic names are required for e-invoice compliance.
+- The VAT TRN must be a valid 15-digit UAE tax registration number.
+- Add the PEPPOL Participant ID to enable direct electronic invoice delivery.
+</Tip>
