@@ -2,8 +2,12 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Fatorly",
-  "colors": { "primary": "#0B5FFF", "light": "#4D8BFF", "dark": "#0B5FFF" },
+  "colors": { "primary": "#0d9488", "light": "#2dd4bf", "dark": "#0d9488" },
   "favicon": "/images/favicon.png",
+  "logo": {
+    "light": "/logo/fatorly-light.svg",
+    "dark": "/logo/fatorly-dark.svg"
+  },
   "navigation": {
     "languages": [
       {
