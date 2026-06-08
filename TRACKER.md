@@ -8,12 +8,12 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 |----|-----------------|-----------------------|--------------------------------|----|----|----------|----------|----------|-------|
 | 1  | Getting Started | Introduction          | (overview)                     | ✅ | ✅ | n/a      | n/a      | 🟡       | authored |
 | 2  | Getting Started | Register              | /register                      | ✅ | ✅ | ✅       | ✅       | 🟡       | light mode |
-| 3  | Getting Started | Login                 | /login                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 4  | Getting Started | Forgot Password       | /forgot-password               | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 5  | Getting Started | Reset Password        | /reset-password                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 6  | Getting Started | Verify Email          | /verify-email                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 7  | Getting Started | Onboarding Wizard     | /onboarding                    | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 8  | Getting Started | MFA Setup             | /settings/mfa                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 3  | Getting Started | Login                 | /login                         | ✅ | ✅ | ✅       | ✅       | 🟡       | light mode |
+| 4  | Getting Started | Forgot Password       | /forgot-password               | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 5  | Getting Started | Reset Password        | /reset-password                | ✅ | ✅ | ✅       | ✅       | 🟡       | form state (no token) |
+| 6  | Getting Started | Verify Email          | /verify-email                  | ✅ | ✅ | ✅       | ✅       | 🟡       | error state (no token) |
+| 7  | Getting Started | Onboarding Wizard     | /onboarding                    | ✅ | ✅ | ✅       | ✅       | 🟡       | step 1; launched from EmaraTax |
+| 8  | Getting Started | MFA Setup             | /settings/mfa                  | ✅ | ✅ | ✅       | ✅       | 🟡       | QR+secret redacted |
 | 9  | Home            | Dashboard             | /                              | ⬜ | ⬜ | ⚠️dark   | ⬜       | ⬜       | re-capture in light |
 | 10 | Home            | What's New            | /whats-new                     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
 | 11 | Master Data     | Items                 | /items                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |

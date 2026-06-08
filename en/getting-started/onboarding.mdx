@@ -1,0 +1,61 @@
+---
+title: "Onboarding & FTA Linking"
+description: "Link your business with the UAE Federal Tax Authority to activate e-invoicing."
+---
+
+Onboarding links your Fatorly account with the UAE Federal Tax Authority (FTA).
+This is the linking-request flow that connects your business — identified by its
+tax details — so you can send and receive invoices over the PEPPOL network.
+
+<Frame>
+  <img src="/images/en/getting-started/onboarding-1.png" alt="Fatorly onboarding linking request — applicant details" />
+</Frame>
+
+<Note>
+The linking request is normally launched from the FTA's **EmaraTax** portal,
+which opens this wizard with a secure request. Opening `/onboarding` directly
+without that secure request shows a "missing request" message — start the flow
+from EmaraTax.
+</Note>
+
+## The two steps
+
+The wizard has two steps, shown by the indicator at the top of the page.
+
+### Step 1 — Applicant Details
+
+Confirm who is requesting the link.
+
+| Field | Required | Description |
+|---|---|---|
+| Registered EmaraTax email address | Yes | The email registered with the FTA / EmaraTax. |
+| TIN (Tax Identifier Number) | Yes | Your Tax Identifier Number. |
+| Registered mobile number | No | The mobile number registered with the FTA. |
+
+Select **Verify Applicant Details** to continue. Fatorly verifies the details
+against the FTA before moving to step 2.
+
+### Step 2 — Review & Confirm
+
+Review the entity details returned by the FTA and confirm the link.
+
+| Field | Description |
+|---|---|
+| Legal Type | The legal type of the entity. |
+| Entity Legal Name (English) | Registered legal name in English. |
+| Entity Legal Name (Arabic) | Registered legal name in Arabic. |
+| VAT TRN | Your VAT Tax Registration Number. |
+| Effective Date of Registration | Date of registration / joining the VAT group. |
+
+Tick the confirmation checkbox to declare the details are correct, then select
+**Submit** to complete the linking request.
+
+## After linking
+
+Once the request is confirmed, your business is linked and you can begin issuing
+compliant invoices. See [Create / Edit an Invoice](/en/invoicing/create-invoice).
+
+<Warning>
+Linking sessions expire after a limited time. If your session expires, return to
+the EmaraTax portal and start a new linking request.
+</Warning>
