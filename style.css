@@ -1,0 +1,21 @@
+/*
+ * Per-language logo: show the Arabic wordmark on Arabic (RTL) pages.
+ *
+ * Mintlify has no native per-language logo (navigation.languages only overrides
+ * banner/footer/navbar). The global logo renders as an <img> whose src points at
+ * our /logo/fatorly-{light,dark}.svg files, so we swap the rendered image via the
+ * CSS `content` property on Arabic pages. We match on both the RTL direction and
+ * the ar language marker for robustness.
+ */
+
+/* Light theme logo (navy) -> Arabic navy logo */
+[dir="rtl"] #navbar img[src*="fatorly-light.svg"],
+[lang="ar"] #navbar img[src*="fatorly-light.svg"] {
+  content: url("/logo/fatorly-light-ar.svg");
+}
+
+/* Dark theme logo (white) -> Arabic white logo */
+[dir="rtl"] #navbar img[src*="fatorly-dark.svg"],
+[lang="ar"] #navbar img[src*="fatorly-dark.svg"] {
+  content: url("/logo/fatorly-dark-ar.svg");
+}

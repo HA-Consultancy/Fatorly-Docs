@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1104.54 305.13">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-9 {
+        fill: #fff;
+        font-family: Tajawal-Medium, Tajawal;
+        font-size: 198.63px;
+        font-weight: 500;
+      }
+
+      .cls-9, .cls-10 {
+        isolation: isolate;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="121.08" y1="35.6" x2="349.25" y2="208.16" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00d1e3"/>
+      <stop offset="1" stop-color="#00a7a5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="40.89" y1="-1770.24" x2="71.14" y2="-1793.11" gradientTransform="translate(0 -1765.9764) scale(1 -1)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="87.99" y1="44.72" x2="124.32" y2="72.19" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="3.79" y1="72.98" x2="33.37" y2="95.34" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="88.22" y1="120.89" x2="117.89" y2="143.33" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="-1.66" y1="170.64" x2="28.79" y2="193.66" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-7" x1="114.81" y1="206.7" x2="143.81" y2="228.63" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="57.3" y1="245.15" x2="87.82" y2="268.24" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="uuid-707be419-b8ad-4b32-b32b-5fd590ae590e">
+        <g class="cls-10">
+          <g class="cls-10">
+            <g class="cls-10">
+              <text class="cls-9" transform="translate(415.83 230.64) scale(1.17 1)"><tspan x="0" y="0">فاتورلي</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Layer_12" data-name="Layer 12">
+        <g>
+          <path class="cls-8" d="M181.96.19v36.52h36.5V.19l167.93-.19v64.31l-110.86.19v59.31h89.23v63.85h-88.08v103.13h-58.22v-38.79h-36.5v38.79h-35.82v-38.79h35.82v-47.31h-37.1l.33-40.17h36.77v-49.48h-34.36v-38.72h34.36v-39.58h-34.1V.19h34.1ZM181.96,76.31v38.72l37.46.21v-38.76l-37.46-.17h0ZM181.96,204.68l37.59-.13-.36-40.04h-37.23v40.17h0Z"/>
+          <rect class="cls-7" x="42.48" y="2.16" width="27.07" height="27.07"/>
+          <rect class="cls-6" x="90.23" y="41.75" width="31.84" height="33.41"/>
+          <rect class="cls-5" x="5.55" y="70.64" width="26.05" height="27.03"/>
+          <rect class="cls-3" x="89.77" y="118.83" width="26.56" height="26.56"/>
+          <rect class="cls-4" y="168.44" width="27.13" height="27.42"/>
+          <rect class="cls-2" x="116.33" y="204.68" width="25.96" height="25.96"/>
+          <rect class="cls-1" x="58.9" y="243.03" width="27.32" height="27.32"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
