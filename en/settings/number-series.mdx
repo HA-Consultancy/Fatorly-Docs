@@ -1,0 +1,50 @@
+---
+title: "Number Series"
+description: "Configure automatic document numbering for invoices and credit notes."
+---
+
+Number series control how your documents are numbered. Each series maps a document
+**category** and **direction** to a prefix and the next number to use, so every
+invoice and credit note gets a unique, sequential identifier automatically.
+
+<Frame>
+  <img src="/images/en/settings/number-series-1.png" alt="Fatorly number series" />
+</Frame>
+
+## The list
+
+Each row shows the series **Code**, **Name**, **Category**, **Direction**, **Next
+Number**, whether it's the **Default** for that category, and its **Status**.
+
+Fatorly comes with a series for each document type, for example:
+
+| Code | Name | Example next number |
+|---|---|---|
+| SI | Sales Tax Invoices | `INV-2026-00001` |
+| SCI | Sales Commercial Invoices | `CI-2026-00001` |
+| SCN | Sales Tax Credit Notes | `CN-2026-00001` |
+| SCCN | Sales Commercial Credit Notes | `CCN-2026-00001` |
+| SBI | Self-billed Tax Invoices | `SBI-2026-00001` |
+| SBCN | Self-billed Tax Credit Notes | `SBCN-2026-00001` |
+| PI | Purchase Invoices | `PI-2026-00001` |
+| PCN | Purchase Credit Notes | `PCN-2026-00001` |
+
+## Add or edit a series
+
+<Steps>
+  <Step title="Open the form">
+    Select **Add New**, or **Edit** on a series.
+  </Step>
+  <Step title="Configure">
+    Set the code, name, category, direction, prefix/format, and next number, and
+    whether it's the default for its category.
+  </Step>
+  <Step title="Save">
+    The next document of that type will use this series.
+  </Step>
+</Steps>
+
+<Warning>
+Changing the next number affects the numbering of future documents. Keep
+numbering sequential to stay compliant and avoid duplicate numbers.
+</Warning>

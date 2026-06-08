@@ -1,0 +1,49 @@
+---
+title: "API Keys"
+description: "Issue and manage credentials for the Integration API."
+---
+
+API keys let you connect your own systems (such as an ERP) to Fatorly's
+Integration API. You can scope each key to exactly the access it needs and revoke
+it at any time.
+
+<Frame>
+  <img src="/images/en/settings/api-keys-1.png" alt="Fatorly API keys" />
+</Frame>
+
+## Create an API key
+
+<Steps>
+  <Step title="Name the key">
+    Enter a descriptive **Name** (e.g. "My ERP integration").
+  </Step>
+  <Step title="Choose scopes">
+    Select only the scopes the integration needs (see below).
+  </Step>
+  <Step title="Create">
+    Select **Create API Key**. The secret is shown **once** — copy it immediately
+    and store it securely. You won't be able to see it again.
+  </Step>
+</Steps>
+
+## Scopes
+
+| Scope | Grants |
+|---|---|
+| `invoices:read` / `invoices:write` | Read / create invoices. |
+| `customers:read` / `customers:write` | Read / manage customers. |
+| `vendors:read` / `vendors:write` | Read / manage vendors. |
+| `items:read` / `items:write` | Read / manage items. |
+| `participants:read` | Look up PEPPOL participants. |
+| `webhooks:manage` | Manage webhook subscriptions. |
+
+## Manage existing keys
+
+The table lists each key's **Name** (with its ID prefix), **Scopes**, **Status**,
+**Created**, and **Last Used** dates. Select **Revoke** to disable a key
+immediately.
+
+<Warning>
+The full secret is only displayed at creation time. If a key is lost or
+compromised, **Revoke** it and create a new one.
+</Warning>

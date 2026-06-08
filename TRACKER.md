@@ -27,11 +27,11 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 19 | Invoicing       | Self-Billing          | /self-billing                  | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
 | 20 | Invoicing       | Create / Edit Invoice | /invoices/new                  | ✅ | ✅ | ✅       | ✅       | 🟡       | empty form |
 | 21 | Invoicing       | View Invoice          | /invoices/:id                  | ✅ | ✅ | ✅       | ✅       | 🟡       | invoice #1038 |
-| 22 | Settings        | Company Profile       | /settings/company-profile      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 23 | Settings        | Number Series         | /settings/number-series        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 24 | Settings        | Company Auditors      | /settings/auditors             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 25 | Settings        | Integrations          | /settings/integrations         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 26 | Settings        | API Keys              | /settings/integration/api-keys | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 27 | Settings        | Change Password       | /settings/change-password      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 22 | Settings        | Company Profile       | /settings/company-profile      | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 23 | Settings        | Number Series         | /settings/number-series        | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 24 | Settings        | Company Auditors      | /settings/auditors             | ✅ | ✅ | ✅       | ✅       | 🟡       | empty state |
+| 25 | Settings        | Integrations          | /settings/integrations         | ✅ | ✅ | ✅       | ✅       | 🟡       | QuickBooks connected |
+| 26 | Settings        | API Keys              | /settings/integration/api-keys | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
+| 27 | Settings        | Change Password       | /settings/change-password      | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
 | 28 | Auditor         | Company Selector      | /auditor/companies             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
 | 29 | Auditor         | Auditing a Company    | (read-only views)              | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |

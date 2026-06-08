@@ -1,0 +1,42 @@
+---
+title: "Integrations & Connectors"
+description: "Connect external systems such as QuickBooks Online and access the API."
+---
+
+The Integrations page connects external systems to Fatorly so your data syncs
+automatically, and provides access to the Integration API.
+
+<Frame>
+  <img src="/images/en/settings/integrations-1.png" alt="Fatorly integrations and connectors" />
+</Frame>
+
+## Available connectors
+
+- **QuickBooks Online** — sync customers, items, and invoices between QuickBooks
+  and Fatorly. Select **Manage** to connect or disconnect.
+- **API Keys** — issue credentials for the Integration API. Select **Manage** to
+  open [API Keys](/en/settings/api-keys).
+
+## QuickBooks Online
+
+Once connected, the **Connection Details** panel shows:
+
+- The connection **status** (e.g. Connected) and a **Disconnect** option.
+- **Sync Now** to trigger a manual sync.
+- A **Sync History** table listing each sync action (create item, invoice, etc.)
+  with timestamps.
+
+<Steps>
+  <Step title="Connect">
+    Select **Manage** on QuickBooks Online and authorize Fatorly in the
+    QuickBooks consent screen.
+  </Step>
+  <Step title="Sync">
+    Use **Sync Now** to pull data, or let scheduled syncs run automatically.
+  </Step>
+</Steps>
+
+<Tip>
+Need programmatic access instead of QuickBooks? Use
+[API Keys](/en/settings/api-keys) to integrate your own ERP over the REST API.
+</Tip>
