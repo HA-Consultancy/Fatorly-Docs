@@ -1,97 +1,104 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
-  "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
-  },
-  "favicon": "/favicon.ico",
-  "icons": {
-    "library": "lucide"
-  },
-  "styling": {
-    "eyebrows": "breadcrumbs"
-  },
-  "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
-  },
+  "theme": "mint",
+  "name": "Fatorly",
+  "colors": { "primary": "#0B5FFF", "light": "#4D8BFF", "dark": "#0B5FFF" },
+  "favicon": "/images/favicon.png",
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Home",
-          "icon": "house",
-          "href": "/"
-        },
-        {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
-        }
-      ]
-    },
-    "directory": "card",
-    "groups": [
+    "languages": [
       {
-        "group": "Platform",
-        "icon": "layers",
-        "expanded": true,
-        "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+        "language": "en",
+        "default": true,
+        "groups": [
+          { "group": "Getting Started", "pages": [
+            "en/index",
+            "en/getting-started/register",
+            "en/getting-started/login",
+            "en/getting-started/forgot-password",
+            "en/getting-started/reset-password",
+            "en/getting-started/verify-email",
+            "en/getting-started/onboarding",
+            "en/getting-started/mfa-setup"
+          ]},
+          { "group": "Home", "pages": [
+            "en/home/dashboard",
+            "en/home/whats-new"
+          ]},
+          { "group": "Master Data", "pages": [
+            "en/master-data/items",
+            "en/master-data/customers",
+            "en/master-data/vendors",
+            "en/master-data/payment-methods"
+          ]},
+          { "group": "Invoicing", "pages": [
+            "en/invoicing/sales-invoices",
+            "en/invoicing/sales-credit-notes",
+            "en/invoicing/purchase-invoices",
+            "en/invoicing/purchase-credit-notes",
+            "en/invoicing/self-billing",
+            "en/invoicing/create-invoice",
+            "en/invoicing/view-invoice"
+          ]},
+          { "group": "Settings", "pages": [
+            "en/settings/company-profile",
+            "en/settings/number-series",
+            "en/settings/company-auditors",
+            "en/settings/integrations",
+            "en/settings/api-keys",
+            "en/settings/change-password"
+          ]},
+          { "group": "Auditor", "pages": [
+            "en/auditor/company-selector",
+            "en/auditor/auditing-a-company"
+          ]}
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
-        "expanded": true,
-        "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
-        ]
-      },
-      {
-        "group": "Integrations",
-        "icon": "plug",
-        "expanded": true,
-        "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+        "language": "ar",
+        "groups": [
+          { "group": "ابدأ من هنا", "pages": [
+            "ar/index",
+            "ar/getting-started/register",
+            "ar/getting-started/login",
+            "ar/getting-started/forgot-password",
+            "ar/getting-started/reset-password",
+            "ar/getting-started/verify-email",
+            "ar/getting-started/onboarding",
+            "ar/getting-started/mfa-setup"
+          ]},
+          { "group": "الرئيسية", "pages": [
+            "ar/home/dashboard",
+            "ar/home/whats-new"
+          ]},
+          { "group": "البيانات الأساسية", "pages": [
+            "ar/master-data/items",
+            "ar/master-data/customers",
+            "ar/master-data/vendors",
+            "ar/master-data/payment-methods"
+          ]},
+          { "group": "الفوترة", "pages": [
+            "ar/invoicing/sales-invoices",
+            "ar/invoicing/sales-credit-notes",
+            "ar/invoicing/purchase-invoices",
+            "ar/invoicing/purchase-credit-notes",
+            "ar/invoicing/self-billing",
+            "ar/invoicing/create-invoice",
+            "ar/invoicing/view-invoice"
+          ]},
+          { "group": "الإعدادات", "pages": [
+            "ar/settings/company-profile",
+            "ar/settings/number-series",
+            "ar/settings/company-auditors",
+            "ar/settings/integrations",
+            "ar/settings/api-keys",
+            "ar/settings/change-password"
+          ]},
+          { "group": "المدقق", "pages": [
+            "ar/auditor/company-selector",
+            "ar/auditor/auditing-a-company"
+          ]}
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
-    }
   }
 }

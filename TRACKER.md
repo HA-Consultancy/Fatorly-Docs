@@ -1,0 +1,37 @@
+# Documentation Tracker
+
+Legend: ⬜ todo · 🟡 in progress · ✅ done
+
+A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all ✅.
+
+| #  | Section         | Page                  | Route                          | EN | AR | Shots EN | Shots AR | Reviewed | Notes |
+|----|-----------------|-----------------------|--------------------------------|----|----|----------|----------|----------|-------|
+| 1  | Getting Started | Introduction          | (overview)                     | ✅ | ✅ | n/a      | n/a      | 🟡       | authored |
+| 2  | Getting Started | Register              | /register                      | ✅ | ✅ | ✅       | ✅       | 🟡       | light mode |
+| 3  | Getting Started | Login                 | /login                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 4  | Getting Started | Forgot Password       | /forgot-password               | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 5  | Getting Started | Reset Password        | /reset-password                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 6  | Getting Started | Verify Email          | /verify-email                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 7  | Getting Started | Onboarding Wizard     | /onboarding                    | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 8  | Getting Started | MFA Setup             | /settings/mfa                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 9  | Home            | Dashboard             | /                              | ⬜ | ⬜ | ⚠️dark   | ⬜       | ⬜       | re-capture in light |
+| 10 | Home            | What's New            | /whats-new                     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 11 | Master Data     | Items                 | /items                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 12 | Master Data     | Customers             | /customers                     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 13 | Master Data     | Vendors               | /vendors                       | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 14 | Master Data     | Payment Methods       | /payment-methods               | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 15 | Invoicing       | Sales Invoices        | /sales/invoices                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 16 | Invoicing       | Sales Credit Notes    | /sales/credit-notes            | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 17 | Invoicing       | Purchase Invoices     | /purchases/invoices            | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 18 | Invoicing       | Purchase Credit Notes | /purchases/credit-notes        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 19 | Invoicing       | Self-Billing          | /self-billing                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 20 | Invoicing       | Create / Edit Invoice | /invoices/new                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 21 | Invoicing       | View Invoice          | /invoices/:id                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 22 | Settings        | Company Profile       | /settings/company-profile      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 23 | Settings        | Number Series         | /settings/number-series        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 24 | Settings        | Company Auditors      | /settings/auditors             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 25 | Settings        | Integrations          | /settings/integrations         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 26 | Settings        | API Keys              | /settings/integration/api-keys | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 27 | Settings        | Change Password       | /settings/change-password      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 28 | Auditor         | Company Selector      | /auditor/companies             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 29 | Auditor         | Auditing a Company    | (read-only views)              | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
