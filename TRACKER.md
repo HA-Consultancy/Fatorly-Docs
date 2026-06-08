@@ -33,5 +33,5 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 25 | Settings        | Integrations          | /settings/integrations         | ✅ | ✅ | ✅       | ✅       | 🟡       | QuickBooks connected |
 | 26 | Settings        | API Keys              | /settings/integration/api-keys | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
 | 27 | Settings        | Change Password       | /settings/change-password      | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
-| 28 | Auditor         | Company Selector      | /auditor/companies             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
-| 29 | Auditor         | Auditing a Company    | (read-only views)              | ⬜ | ⬜ | ⬜       | ⬜       | ⬜       |       |
+| 28 | Auditor         | Company Selector      | /auditor/companies             | ✅ | ✅ | ✅       | ✅       | 🟡       | EN-only UI |
+| 29 | Auditor         | Auditing a Company    | (read-only views)              | ✅ | ✅ | ✅       | ✅       | 🟡       | bilingual app shell |
