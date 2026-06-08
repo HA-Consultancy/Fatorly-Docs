@@ -1,0 +1,46 @@
+---
+title: "API Reference"
+description: "Open the interactive Fatorly Integration API reference."
+---
+
+Fatorly provides an interactive API reference for the Integration API, powered by
+Scalar. It lets you browse every endpoint and run live "Try it" calls. The
+reference is built into the platform and is available only to signed-in users.
+
+<CardGroup cols={1}>
+  <Card title="Open the interactive API Reference" icon="code" href="https://app.fatorly.com/developer/api-reference">
+    Browse endpoints and make live calls in Scalar, inside the Fatorly platform.
+    Opens in a new tab.
+  </Card>
+</CardGroup>
+
+<Warning>
+You must be signed in to your Fatorly account to open the API Reference. If you're
+not signed in, you'll be redirected to the login page first.
+</Warning>
+
+## How to authenticate & try a call
+
+Every request to the Integration API requires an API key sent in the
+`X-Api-Key` header.
+
+<Steps>
+  <Step title="Generate an API key">
+    In the platform, go to **Settings → Integrations → API Keys** and create a key.
+    The key looks like `fat_…` and is shown **only once** at creation — copy it
+    immediately. See [API Keys](/en/settings/api-keys) for details.
+  </Step>
+  <Step title="Add your key in Scalar">
+    On the API Reference page, open Scalar's **Authentication** panel and paste your
+    key into the **`X-Api-Key`** field.
+  </Step>
+  <Step title="Try a call">
+    Choose an endpoint and select **Try it** to call the live Integration API.
+    Every request sends your key in the `X-Api-Key` header.
+  </Step>
+</Steps>
+
+<Note>
+Treat your API key like a password. If it's lost or compromised, revoke it under
+**Settings → Integrations → API Keys** and create a new one.
+</Note>

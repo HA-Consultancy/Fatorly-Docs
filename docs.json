@@ -47,6 +47,9 @@
             "en/settings/api-keys",
             "en/settings/change-password"
           ]},
+          { "group": "Developers", "pages": [
+            "en/developers/api-reference"
+          ]},
           { "group": "Auditor", "pages": [
             "en/auditor/company-selector",
             "en/auditor/auditing-a-company"
@@ -92,6 +95,9 @@
             "ar/settings/integrations",
             "ar/settings/api-keys",
             "ar/settings/change-password"
+          ]},
+          { "group": "المطوّرون", "pages": [
+            "ar/developers/api-reference"
           ]},
           { "group": "المدقق", "pages": [
             "ar/auditor/company-selector",

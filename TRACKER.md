@@ -35,3 +35,4 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 27 | Settings        | Change Password       | /settings/change-password      | ✅ | ✅ | ✅       | ✅       | 🟡       |       |
 | 28 | Auditor         | Company Selector      | /auditor/companies             | ✅ | ✅ | ✅       | ✅       | 🟡       | EN-only UI |
 | 29 | Auditor         | Auditing a Company    | (read-only views)              | ✅ | ✅ | ✅       | ✅       | 🟡       | bilingual app shell |
+| 30 | Developers      | API Reference         | /developer/api-reference       | ✅ | ✅ | n/a      | n/a      | 🟡       | launch link; route blank on prod (not deployed?) — no screenshot |
