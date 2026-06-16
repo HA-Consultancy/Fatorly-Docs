@@ -87,8 +87,10 @@
             "en/developers/authentication",
             "en/developers/quickstart",
             "en/developers/idempotency",
-            "en/developers/errors"
-          ]}
+            "en/developers/errors",
+            "en/developers/api-reference"
+          ]},
+          { "group": "API Reference", "openapi": "api-reference/openapi.json" }
         ]
       },
       {
@@ -167,8 +169,10 @@
             "ar/developers/authentication",
             "ar/developers/quickstart",
             "ar/developers/idempotency",
-            "ar/developers/errors"
-          ]}
+            "ar/developers/errors",
+            "ar/developers/api-reference"
+          ]},
+          { "group": "API Reference", "openapi": "api-reference/openapi.json" }
         ]
       }
     ]
