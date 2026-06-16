@@ -25,8 +25,8 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 12 | Purchases       | Purchase Invoices       | /purchases/invoices                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 13 | Purchases       | Purchase Credit Notes   | /purchases/credit-notes            | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 14 | Self-Billing    | Self-Billing            | /self-billing                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 15 | Invoice Editor  | Create / Edit Invoice   | /invoices/new                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 16 | Invoice Editor  | Invoice Field Reference | (reference)                        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 15 | Invoice Editor  | Create / Edit Invoice   | /invoices/new                      | ⬜ | ⬜ | 🟡       | ⬜       | ⬜ |
+| 16 | Invoice Editor  | Invoice Field Reference | (reference)                        | ✅ | ✅ | 🟡       | ⬜       | ⬜ |
 | 17 | Invoice Editor  | View Invoice            | /invoices/:id                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 18 | Reports         | Reports Overview        | /reports                           | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 19 | Reports         | Running a Report        | /reports/:reportKey                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |

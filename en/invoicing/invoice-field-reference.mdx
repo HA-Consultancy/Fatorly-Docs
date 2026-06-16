@@ -1,0 +1,197 @@
+---
+title: "Invoice Field Reference"
+description: "Every field on the invoice editor — what it means, whether it is required, and the values it accepts."
+---
+
+This page documents **every field** on the invoice editor, grouped by the
+section it appears in. Use it as a lookup while building a document. For a
+step-by-step walkthrough instead, see
+[Create or Edit an Invoice](/en/invoicing/create-invoice).
+
+<Note>
+Fatorly validates each document against the UAE PINT (PINT&nbsp;AE) rules before
+it can be submitted. Fields marked **Required** must be present; several others
+are **conditionally required** depending on the tax category, document type, or
+whether you start filling a related group.
+</Note>
+
+The editor is organized into a header, a line-items table, three collapsible
+sections (Charges &amp; Allowances, References &amp; Delivery, Payment &amp; Notes),
+and a live Totals panel.
+
+<Frame>
+  <img src="/images/en/invoicing/create-invoice-2.png" alt="Invoice editor with the Charges & Allowances and References & Delivery sections expanded" />
+</Frame>
+
+## 1. Document header (Invoice Details)
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Invoice # | Yes | Auto / read-only | From your [number series](/en/settings/number-series) | Assigned automatically when creating; cannot be edited afterwards. |
+| Currency | Yes | Text / selector | Defaults to `AED` | The document currency. |
+| Issue Date | Yes | Date picker | Defaults to today | The date the document is issued. |
+| Due Date | Conditional | Date picker | — | Expected for invoices; optional for credit notes. |
+
+## 2. Counterparty &amp; credit-note reference
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Customer / Vendor | Expected | Searchable dropdown | From your [Customers](/en/master-data/customers) / [Vendors](/en/master-data/vendors) | The buyer (sales) or supplier (purchase / self-billing). Selecting one fills its name, TRN, and address. |
+| Referenced Invoice | Yes (credit notes) | Text | — | The number of the invoice this credit note corrects. |
+| Preceding Invoice Date | No | Date picker | — | The issue date of the referenced invoice. |
+
+<Warning>
+A **Tax Invoice** requires a counterparty that has a VAT **TRN**. A **Commercial
+Invoice** is for counterparties without a TRN. The customer/vendor list is
+filtered accordingly.
+</Warning>
+
+## 3. Line items
+
+Each row in the **Line Items** table is one invoiced product or service.
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Item Name | Yes | Searchable dropdown / text | From your [item catalog](/en/master-data/items) | Selecting a catalog item prefills its name, unit of measure, unit price, and its default tax category and classification. |
+| Description | No | Text | — | Optional free-text line description. |
+| Quantity | Yes | Number | Defaults to `1` | Number of units. |
+| Unit of Measure | Yes | Dropdown | Defaults to `EA` | UN/CEFACT unit code (e.g. `EA`, `KGM`, `HUR`). |
+| Unit Price | Yes | Number | — | Price per unit, before tax. |
+| Discount / charge | No | Inline editor | — | Per-line allowance(s) or charge(s) — see the table below. |
+| VAT Group | Yes | Dropdown | `S` `Z` `E` `O` `AE` `L` | Sets the line's tax category and rate (see [VAT categories](#vat-categories)). New lines default to the 5% standard group. |
+| Exemption Reason | Conditional | Dropdown | FTA exemption reason codes | **Shown and required only when the VAT category is `E` (Exempt).** |
+| Line Net | — | Calculated | — | `Quantity × Unit Price`, minus allowances plus charges. |
+
+### Per-line allowances &amp; charges
+
+Opened from the **Discount / charge** button on a line.
+
+| Field | Required | Control | Notes |
+|---|---|---|---|
+| Allowance / Charge | Yes | Toggle | Whether the amount reduces (allowance) or increases (charge) the line. |
+| Amount | Yes | Number | The allowance or charge amount. |
+| Reason | No | Text | Free-text reason. |
+| Reason code | No | Text | Standard reason code. |
+
+### Line item identifiers
+
+Per-line product identifiers, used by the buyer's systems and standards bodies.
+
+| Field | Required | Control | Notes |
+|---|---|---|---|
+| Buyer's item ID | No | Text | The item's identifier in the **buyer's** catalogue (BT-156). |
+| Seller's item ID | No | Text | The item's identifier in the **seller's** catalogue (BT-155). |
+| Standard item ID | No | Text | A registered standard identifier such as a GTIN barcode (BT-157). |
+| Standard scheme ID | No | Text | The scheme of the standard ID (BT-157-1). Use `0160` for a GTIN / GS1 number. |
+
+### Item classifications (repeatable)
+
+Per-line commodity classification codes.
+
+| Field | Required | Control | Allowed | Notes |
+|---|---|---|---|---|
+| Code | Per row | Text | — | The goods/services code within the chosen scheme (e.g. a Harmonized System tariff code). |
+| List (scheme) | Per row | Dropdown | Valid UNTDID&nbsp;7143 code | The classification scheme the code belongs to — e.g. `HS` (Harmonized System), `TSR` (UNSPSC), `SRV`, `STJ`. |
+| Version | No | Text | — | The scheme version, if relevant. |
+
+## 4. Charges &amp; Allowances (document level)
+
+A collapsible section for discounts and charges that apply to the **whole
+document** (not a single line). Repeatable.
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Allowance / Charge | Yes | Toggle | — | Whether the amount reduces or increases the document total. |
+| Amount | Yes | Number | — | The allowance or charge amount. |
+| Reason | No | Text | — | Free-text reason. |
+| Code | No | Text | — | Standard reason code. |
+| Tax Category | Yes | Dropdown | `S` `E` `O` `AE` `Z` `L`, default `S` | The VAT category the allowance/charge is taxed under. |
+| Tax Rate | Yes | Number | Default `5` | The VAT rate (%). |
+| Exemption Reason | Conditional | Dropdown | FTA exemption reason codes | Required when the Tax Category is `E` and the amount is greater than zero. |
+
+## 5. References &amp; Delivery
+
+A collapsible section for related documents and delivery details.
+
+### Buyer reference
+
+| Field | Required | Control | Notes |
+|---|---|---|---|
+| Buyer reference | No | Text | A buyer-side reference such as a cost centre or buyer code. |
+
+### Document references (repeatable)
+
+| Field | Required | Control | Allowed | Notes |
+|---|---|---|---|---|
+| Reference type | Yes | Dropdown | Purchase Order, Sales Order, Contract, Project, Despatch, Receipt | The kind of document this reference points to. |
+| Reference | Yes | Text | — | The reference number/identifier. |
+| Issue date | No | Date picker | — | The referenced document's date. |
+| Scheme ID | No | Text | — | An optional scheme for the reference. |
+
+### Attachments (repeatable)
+
+| Field | Required | Control | Notes |
+|---|---|---|---|
+| Document ID | No | Text | An identifier for the attached document. |
+| File | No | Library picker / upload / URL | Attach a file from your [Files library](/en/files/files-library), upload a new one, or provide an external URL. |
+
+<Warning>
+A public link is generated for each attached file once the document is created.
+**Anyone with the link can open the file.**
+</Warning>
+
+### Delivery
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Actual delivery date | No | Date picker | — | When the goods/services were delivered. |
+| Incoterms | No | Dropdown | `EXW` `FCA` `CPT` `CIP` `DAP` `DPU` `DDP` `FAS` `FOB` `CFR` `CIF` | International commercial delivery terms. |
+| Street | No | Text | — | Delivery street address. |
+| Additional address line | No | Text | — | Second address line. |
+| City | No | Searchable dropdown | — | Delivery city. |
+| State / region | No | Dropdown | UAE emirates | Delivery emirate / region. |
+| Country | Conditional | Dropdown | ISO country, default `AE` | Required once any delivery address field is filled. |
+
+## 6. Payment &amp; Notes
+
+A collapsible section for payment details and notes.
+
+| Field | Required | Control | Allowed | Notes |
+|---|---|---|---|---|
+| Payment Method | No | Dropdown | From your [Payment Methods](/en/master-data/payment-methods) | How the invoice is to be paid. |
+| Payment Terms | No | Dropdown | Due on Receipt, COD, Net 7/15/30/45/60/90 | The agreed payment terms. |
+| Customer Notes / Remarks | No | Text area | — | Free-text notes shown on the document. |
+
+## 7. Totals
+
+The **Totals** panel is calculated automatically and is read-only.
+
+| Value | Notes |
+|---|---|
+| Total Exclusive of VAT | Sum of line nets before document allowances/charges. |
+| Total Net | Net after document-level allowances and charges. |
+| Total VAT | Total tax, with a per-category breakdown (e.g. `S 5%`). |
+| Total Payable | Grand total including VAT, in the document currency. |
+
+## VAT categories
+
+| Code | Rate | Meaning |
+|---|---|---|
+| `S` | 5% | Standard-rated |
+| `Z` | 0% | Zero-rated |
+| `E` | 0% | Exempt — requires an exemption reason |
+| `O` | 0% | Out of scope |
+| `AE` | 0% | Reverse charge |
+| `L` | 0% | Special / other |
+
+## Validation rules to remember
+
+<Warning>
+- **Exemption reason is required** whenever the tax category is `E` — on a line
+  and on a document-level allowance/charge.
+- **Reverse-charge (`AE`) lines** require a **Standard item ID** with scheme
+  `0160`.
+- A line's **classification scheme (List)** must be a valid UNTDID&nbsp;7143 code.
+- A **Tax Invoice** requires a counterparty with a VAT TRN; a **Commercial
+  Invoice** does not.
+</Warning>
