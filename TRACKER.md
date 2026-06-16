@@ -55,9 +55,9 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 42 | Multi-Company   | Switching Companies     | /select-company                    | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 43 | Auditor         | Auditor Company Selector| /auditor (read-only)               | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 44 | Auditor         | Auditing a Company      | (read-only views)                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 45 | Developers      | Overview                | (guide)                            | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
-| 46 | Developers      | Authentication          | (guide)                            | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
-| 47 | Developers      | Quickstart              | (guide)                            | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
-| 48 | Developers      | Idempotency             | (guide)                            | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
-| 49 | Developers      | Errors                  | (guide)                            | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
+| 45 | Developers      | Overview                | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
+| 46 | Developers      | Authentication          | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
+| 47 | Developers      | Quickstart              | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
+| 48 | Developers      | Idempotency             | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
+| 49 | Developers      | Errors                  | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
 | 50 | Developers      | API Reference (generated)| /developer/api-reference          | ⬜ | n/a| n/a      | n/a      | ⬜ |

@@ -1,0 +1,52 @@
+---
+title: "Errors"
+description: "The Integration API error model and a table of the common HTTP status codes with their meaning and fix."
+---
+
+When a request fails, the Integration API returns a standard HTTP status code and
+a JSON body with a human-readable `message` describing what went wrong.
+
+```json
+{
+  "message": "Idempotency-Key header is required."
+}
+```
+
+Always check the status code first, then read `message` for the specifics.
+
+## Common status codes
+
+| Status | Meaning | How to fix |
+|---|---|---|
+| **400** Bad Request | Validation failed, or the required `Idempotency-Key` header is missing. | Check the `message`. Add an `Idempotency-Key` header and correct any invalid fields. |
+| **401** Unauthorized | The `X-Api-Key` header is missing or the key is invalid or revoked. | Send a valid key in `X-Api-Key`. If it was revoked, create a new key. |
+| **402** Payment Required | Your monthly document quota has been reached. | Wait for the quota to reset or upgrade your plan. |
+| **404** Not Found | The endpoint or referenced resource doesn't exist. | Verify the URL, the resource id, and that the key's company owns it. |
+| **422** Unprocessable Entity | The document failed PINT-AE schematron validation. | Read the `message` for the failing rule and correct the invoice data (for example a missing `exemptionReasonCode` on an exempt line). |
+
+<Note>
+**400 vs 422.** A **400** means the request itself is malformed — bad JSON, a
+missing header, or a field that doesn't validate. A **422** means the request was
+well-formed but the resulting e-invoice doesn't pass the UAE PINT-AE rules.
+</Note>
+
+## Validation and quota
+
+- **`Idempotency-Key`** is mandatory on every `POST`; omitting it is the most
+  common cause of **400**. See [Idempotency](/en/developers/idempotency).
+- An `exemptionReasonCode` is **required** on any line whose `taxCategoryCode` is
+  `E`; omitting it triggers a validation error.
+- A **402** is about your plan, not your request — the request was otherwise
+  valid. Retrying won't help until the quota resets.
+
+## Handling errors in code
+
+- Retry **transient** failures (network errors, timeouts) with the **same**
+  `Idempotency-Key` so you never duplicate a document.
+- Do **not** blindly retry **400/401/402/404/422** — these need a fix
+  (correct the payload, the key, or your plan), not another attempt.
+
+## Related
+
+- [Authentication](/en/developers/authentication) — fixing 401s.
+- [Idempotency](/en/developers/idempotency) — fixing missing-key 400s.

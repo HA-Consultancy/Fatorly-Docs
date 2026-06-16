@@ -1,0 +1,66 @@
+---
+title: "Idempotency"
+description: "Why every POST needs an Idempotency-Key, how to choose one, and what happens when you retry."
+---
+
+Networks are unreliable. A request can succeed on the server but the response
+never reaches you — leaving you unsure whether to retry. **Idempotency** removes
+that risk: you attach a unique key to each write, and the API guarantees the
+operation happens at most once.
+
+## The `Idempotency-Key` header
+
+Every `POST` (invoices, customers, items, and so on) **requires** an
+`Idempotency-Key` header. It's a client-generated unique string that identifies
+this specific operation:
+
+```bash
+curl https://integration.fatorly.com/v1/invoices \
+  -H "X-Api-Key: fat_your_key_here" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: invoice-2026-00042" \
+  -d @invoice.json
+```
+
+<Warning>
+If the `Idempotency-Key` header is missing, the request is rejected with **HTTP
+400**. There is no implicit default.
+</Warning>
+
+## Choosing a key
+
+- Make it **unique per logical operation** — for example one key per invoice you
+  intend to create. A UUID, or a stable business identifier like
+  `invoice-2026-00042`, both work.
+- **Don't reuse** a key for a different operation. The key is what the server uses
+  to recognise a duplicate.
+- Generate it on the **client** before the first attempt, and reuse the **same**
+  value on every retry of that same operation.
+
+## What happens on retry
+
+When you send a request whose `Idempotency-Key` the server has already processed,
+it does **not** create a second record. Instead it safely returns the **original
+result** of the first call:
+
+<Steps>
+  <Step title="First request">
+    `POST /invoices` with `Idempotency-Key: invoice-2026-00042` creates the
+    invoice and returns it.
+  </Step>
+  <Step title="The response is lost">
+    A timeout or dropped connection means you never see the response, so you don't
+    know if it worked.
+  </Step>
+  <Step title="Retry with the same key">
+    You resend the exact same request with the **same** `Idempotency-Key`. The API
+    recognises the key and returns the original invoice — **no duplicate is
+    created**.
+  </Step>
+</Steps>
+
+<Note>
+This makes retries completely safe. Always retry with the same key rather than
+generating a new one, otherwise the server treats it as a brand-new operation and
+you may create a duplicate.
+</Note>
