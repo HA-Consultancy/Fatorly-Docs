@@ -1,40 +1,74 @@
 ---
-title: "Self-Billing"
-description: "Issue self-billed invoices and credit notes on behalf of your vendors."
+title: "Self-billing"
+description: "Issue self-billed invoices and credit notes on a supplier's behalf, and manage them in one list."
 ---
 
-Self-billing is an arrangement where the buyer (you) issues the invoice on behalf
-of the supplier. The Self-Billing page manages self-billed tax invoices and
-self-billed credit notes.
+**Self-billing** is an arrangement where the buyer — you — issues the invoice on
+the **supplier's behalf**, rather than waiting for the supplier to send it. The
+**Self-billing** page is where you create and manage self-billed tax invoices and
+self-billed credit notes. Open it from **Self-billing** in the sidebar.
 
 <Frame>
-  <img src="/images/en/self-billing/self-billing-1.png" alt="Fatorly self-billing" />
+  <img src="/images/en/self-billing/self-billing-1.png" alt="The Fatorly Self-billing list" />
 </Frame>
-
-## The list
-
-The page lists your self-billed documents with their number, date, vendor,
-category, total, VAT, and status — with **Search** and sortable columns.
 
 ## When to use self-billing
 
-Use self-billing when you have an agreement with a supplier to raise invoices on
-their behalf — common for certain procurement arrangements. The documents are
-categorized as **Self-billed Tax Invoice** and **Self-billed Tax Credit Note**.
-
-<Steps>
-  <Step title="Create a self-billed document">
-    Start a new self-billed invoice or credit note from this page.
-  </Step>
-  <Step title="Select the vendor and add lines">
-    Choose the supplier and add line items as you would on a normal invoice.
-  </Step>
-  <Step title="Submit">
-    Review and submit over PEPPOL from the [document view](/en/invoicing/view-invoice).
-  </Step>
-</Steps>
+Use self-billing when you have a written agreement with a supplier to raise
+invoices on their behalf — a common arrangement in certain procurement
+relationships. Because you are issuing on the supplier's behalf, the **supplier**
+is shown on each document rather than a buyer.
 
 <Note>
 Self-billing must be agreed with your supplier and meet UAE FTA requirements
 before you use it.
 </Note>
+
+## The list
+
+Each row is one self-billed document. The grid has these columns:
+
+- **Invoice #** — the document number from your
+  [number series](/en/settings/number-series) (for example `SBI-2026-00001` for
+  an invoice or `SBCN-2026-00001` for a credit note). Select it to open the
+  document.
+- **Issue Date** — the date the document was issued.
+- **Category** — *Self-billed Tax Invoice* or *Self-billed Tax Credit Note*.
+- **Supplier** — the supplier the document is raised on behalf of.
+- **Total** — the total in `AED`.
+- **Status** — a badge such as **Draft** or **Sent**.
+- **Actions** — **View** opens the [document
+  view](/en/invoicing/view-invoice).
+
+Above the grid, the **All documents** chip shows the full count, **Total Value**
+shows the combined value in `AED`, and **Pending Submission** filters to
+documents not yet submitted. Use **Search** to find a document and select a
+column header to sort.
+
+## Create a self-billed document
+
+Two actions in the top-right open the [editor](/en/invoicing/create-invoice):
+
+- **New Self-billed Invoice** — a self-billed tax invoice.
+- **New Self-billed Credit Note** — a self-billed credit note.
+
+<Steps>
+  <Step title="Start the document">
+    Choose **New Self-billed Invoice** or **New Self-billed Credit Note**.
+  </Step>
+  <Step title="Select the supplier and add lines">
+    Choose the supplier the document is raised for and add line items as you
+    would on a normal invoice, setting quantities, prices, and VAT groups.
+  </Step>
+  <Step title="Review and submit">
+    Review the totals, then submit over Peppol from the [document
+    view](/en/invoicing/view-invoice).
+  </Step>
+</Steps>
+
+## Related
+
+- [Create or Edit an Invoice](/en/invoicing/create-invoice) — the editor the
+  *New* buttons open.
+- [View an Invoice](/en/invoicing/view-invoice) — review and submit a document.
+- [Vendors](/en/master-data/vendors) — the suppliers you self-bill for.

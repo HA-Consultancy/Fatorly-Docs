@@ -20,11 +20,11 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 7  | Getting Started | Onboarding Wizard       | /onboarding                        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 8  | Getting Started | MFA Setup               | /settings/mfa                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 9  | Dashboard       | Dashboard               | /                                  | ⬜ | ⬜ | 🟡       | ⬜       | ⬜ |
-| 10 | Sales           | Sales Invoices          | /sales/invoices                    | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 11 | Sales           | Sales Credit Notes      | /sales/credit-notes                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 12 | Purchases       | Purchase Invoices       | /purchases/invoices                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 13 | Purchases       | Purchase Credit Notes   | /purchases/credit-notes            | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 14 | Self-Billing    | Self-Billing            | /self-billing                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 10 | Sales           | Sales Invoices          | /sales/invoices                    | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 11 | Sales           | Sales Credit Notes      | /sales/credit-notes                | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 12 | Purchases       | Purchase Invoices       | /purchases/invoices                | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 13 | Purchases       | Purchase Credit Notes   | /purchases/credit-notes            | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 14 | Self-Billing    | Self-Billing            | /self-billing                      | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 15 | Invoice Editor  | Create / Edit Invoice   | /invoices/new                      | ✅ | ✅ | 🟡       | ⬜       | ⬜ |
 | 16 | Invoice Editor  | Invoice Field Reference | (reference)                        | ✅ | ✅ | 🟡       | ⬜       | ⬜ |
 | 17 | Invoice Editor  | View Invoice            | /invoices/:id                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |

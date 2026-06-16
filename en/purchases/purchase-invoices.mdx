@@ -1,31 +1,56 @@
 ---
 title: "Purchase Invoices"
-description: "View and record inbound invoices received from vendors."
+description: "View the supplier invoices you receive over Peppol, and record received invoices."
 ---
 
-The Purchase Invoices page lists inbound invoices — documents you receive from
-your vendors, including those delivered to you over the PEPPOL network.
+The **Purchase Invoices** page lists the inbound invoices you receive from your
+suppliers — including those delivered to you automatically over the Peppol
+network. Open it from **Purchases → Invoices** in the sidebar.
 
 <Frame>
-  <img src="/images/en/purchases/purchase-invoices-1.png" alt="Fatorly purchase invoices list" />
+  <img src="/images/en/purchases/purchase-invoices-1.png" alt="The Fatorly Purchase Invoices list" />
 </Frame>
 
 ## The list
 
-Each row shows the invoice number, issue date, the **vendor**/supplier, category,
-total, VAT, and status, with **Search** and sortable columns.
+Each row is one received invoice. The grid has these columns:
 
-## Where purchase invoices come from
+- **Invoice #** — the supplier's invoice identifier. Select it to open the
+  document.
+- **Issue Date** — the date the supplier issued the invoice.
+- **Supplier** — the vendor that sent the invoice.
+- **Total** — the total payable in `AED`.
+- **VAT** — the VAT amount included in the total.
+- **Status** — a badge; received documents show **Received**.
+- **Actions** — see [Row actions](#row-actions) below.
 
-- **Received over PEPPOL** — invoices sent to you by trading partners appear here
-  automatically with a *Received* status.
-- **Recorded manually** — use **Record Received Invoice** (from the dashboard's
-  Quick Actions or the new-invoice flow with an inbound direction) to enter a
-  purchase invoice yourself.
+Above the grid, the **All documents** chip shows the full count, **Total Value**
+shows the combined value in `AED`, and **Pending Submission** is available as a
+filter. Use **Search** to find a document by number or supplier, and select a
+column header to sort.
+
+## How purchase invoices arrive
+
+- **Received over Peppol** — invoices sent to you by your trading partners are
+  delivered to your inbox automatically and appear here with a **Received**
+  status. Use **Pull from Peppol** in the top-right to check for and fetch any
+  newly delivered documents on demand.
+- **Recorded manually** — use **Record Received Invoice** in the top-right to
+  enter a supplier invoice yourself, for cases where the document did not arrive
+  over Peppol.
 
 <Tip>
-Select a row's **View** to open the full document, including line items and
-totals.
+Use **Export CSV** in the top-right to download the current list for
+reconciliation against your accounts payable.
 </Tip>
 
-Manage your suppliers in [Vendors](/en/master-data/vendors).
+## Row actions
+
+- **View** opens the full document, including its line items and totals.
+
+## Related
+
+- [Purchase Credit Notes](/en/purchases/purchase-credit-notes) — inbound
+  corrections against purchase invoices.
+- [Vendors](/en/master-data/vendors) — the suppliers you receive invoices from.
+- [View an Invoice](/en/invoicing/view-invoice) — how a document is displayed.
