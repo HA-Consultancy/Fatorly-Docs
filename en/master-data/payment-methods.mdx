@@ -1,32 +1,42 @@
 ---
 title: "Payment Methods"
-description: "Manage the payment methods available on your invoices."
+description: "Maintain a reusable list of payment methods you can select on your invoices."
 ---
 
-Payment methods are the ways your customers can pay — such as Bank Transfer,
-Cash, or card types. You select a payment method when issuing an invoice.
+**Payment methods** are the ways your customers can pay you — such as Bank
+Transfer, Cash, Check, or a card type. Maintaining the list here means you can
+pick a payment method on an invoice instead of retyping it each time. Open the
+page from **Master Data → Payment Methods** in the sidebar.
 
 <Frame>
-  <img src="/images/en/master-data/payment-methods-1.png" alt="Fatorly payment methods list" />
+  <img src="/images/en/master-data/payment-methods-1.png" alt="The Fatorly Payment Methods list" />
 </Frame>
 
-## The payment methods list
+## The list
 
-The list shows each method's **Code**, **Name**, and **Status**, with **Search**
-and sortable columns. Each row has **Edit** and **Delete** actions.
+Each row is one payment method. The grid has these columns:
 
-Fatorly comes with common methods pre-loaded — for example Bank Transfer, Cash,
-Check, Credit/Debit Card, Visa, MasterCard, American Express, Diners Club, and
-Discover.
+- **Code** — a short identifier such as `BANK`, `CASH`, `CHECK`, or `CARD`.
+- **Name** — the display name (for example *Bank Transfer*). Select it to edit.
+- **Status** — **Active** methods appear in the picker on invoices; inactive
+  ones are hidden.
+- **Actions** — **Edit** and **Delete**.
 
-## Add or edit a payment method
+Use the **Search** box to filter, and select any column header to sort. Fatorly
+comes with common methods pre-loaded, such as Bank Transfer, Cash, Check, and
+Credit/Debit Card.
+
+## Add a payment method
+
+Select **Add New** in the top-right. An inline panel opens above the list.
 
 <Steps>
-  <Step title="Open the form">
-    Select **Add New** to create a method, or **Edit** on a row to change one.
-  </Step>
   <Step title="Enter the details">
-    Provide the code and name, then save. New methods are **Active** by default.
+    Provide a unique **Code**, **Name (English)**, and **Name (Arabic)**.
+  </Step>
+  <Step title="Save">
+    Select **Save**. New methods are **Active** by default and immediately
+    available on invoices.
   </Step>
 </Steps>
 
@@ -34,3 +44,13 @@ Discover.
 Mark methods you don't use as inactive (via **Edit**) to keep the selection list
 on invoices short and relevant.
 </Tip>
+
+## Row actions
+
+- **Edit** opens the method for changing its code, names, or status.
+- **Delete** removes the method. Documents already issued are unaffected.
+
+## Related
+
+- [Create or Edit an Invoice](/en/invoicing/create-invoice) — where you select a
+  payment method for a document.

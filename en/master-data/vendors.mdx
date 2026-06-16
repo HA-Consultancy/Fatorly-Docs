@@ -1,53 +1,73 @@
 ---
 title: "Vendors"
-description: "Manage the suppliers you receive invoices from."
+description: "Maintain the suppliers behind your purchase and self-billing documents — their tax and contact details flow onto every document."
 ---
 
-Vendors are the suppliers you receive purchase invoices from and, where
-applicable, issue self-billed documents to. Their details flow onto purchase and
-self-billing documents.
+**Vendors** are the suppliers you receive purchase invoices from and, where
+applicable, issue self-billed documents to. Their details flow onto your
+purchase and self-billing documents. Open the page from **Master Data → Vendors**
+in the sidebar.
 
 <Frame>
-  <img src="/images/en/master-data/vendors-1.png" alt="Fatorly vendors list" />
+  <img src="/images/en/master-data/vendors-1.png" alt="The Fatorly Vendors list" />
 </Frame>
 
-## The vendors list
+## The list
 
-The list shows your vendors with **Search** and sortable columns, plus **Edit**
-and **Delete** actions on each row. Select **Add New** to create a vendor.
+Each row is one vendor. The grid has these columns:
 
-## Add or edit a vendor
+- **Name** — the vendor's name. Select it to open the record for editing.
+- **Email** — the vendor's email address.
+- **Phone** — the vendor's phone number.
+- **VAT TRN** — the 15-digit UAE Tax Registration Number.
+- **Status** — **Active** or inactive.
+- **Actions** — **Edit** and **Delete**.
+
+Use the **Search** box to filter by name, and select any column header to sort.
+
+## Add a vendor
+
+Select **Add New** in the top-right to open the vendor form. It mirrors the
+customer form and is grouped into cards.
 
 <Steps>
-  <Step title="Open the form">
-    Select **Add New**, or **Edit** on an existing vendor.
+  <Step title="Identity">
+    Enter the legal **Name (English)** and **Name (Arabic)**. Both are required
+    for e-invoice compliance.
   </Step>
-  <Step title="Fill in the details">
-    Complete the sections below, then select **Save**.
+  <Step title="Contact Information">
+    Optionally add the **Email**, **Phone**, **VAT TRN**, and **Contact
+    Person**. The VAT TRN must be a valid 15-digit UAE tax registration number.
+  </Step>
+  <Step title="Address">
+    Enter the **Address**, **City**, and **Country** (which defaults to `AE`).
+  </Step>
+  <Step title="PEPPOL Network">
+    Optionally add the **PEPPOL Participant ID** for electronic document
+    exchange with this supplier.
+  </Step>
+  <Step title="Save">
+    New vendors are **Active** by default. Select **Save**.
   </Step>
 </Steps>
 
-<Frame>
-  <img src="/images/en/master-data/vendors-form-1.png" alt="Fatorly new vendor form" />
-</Frame>
-
-### Fields
-
-| Section | Field | Required | Description |
-|---|---|---|---|
-| Identity | Name (English) | Yes | Legal name in English. |
-| Identity | Name (Arabic) | Yes | Legal name in Arabic. |
-| Contact | Email | No | Vendor email. |
-| Contact | Phone | No | Vendor phone. |
-| Contact | VAT TRN | No | 15-digit UAE Tax Registration Number. |
-| Contact | Contact Person | No | Main contact name. |
-| Address | Address, City, Country | No | Physical location. Country defaults to `AE`. |
-| PEPPOL Network | PEPPOL Participant ID | No | Electronic exchange identifier (e.g. `iso6523-actorid-upis::0211:XXXXXXXXXX`). |
-
-New vendors are **Active** by default.
+<Note>
+Address and City are required for Peppol submission — documents that reference a
+vendor without them will fail validation.
+</Note>
 
 <Tip>
-- Both English and Arabic names are required for e-invoice compliance.
-- The VAT TRN must be a valid 15-digit UAE tax registration number.
-- Add the PEPPOL Participant ID to enable direct electronic invoice delivery.
+Vendors are the supplier side of [self-billing](/en/self-billing/self-billing): when you
+self-bill, you issue the document on the supplier's behalf, so keep their legal
+name, VAT TRN, and PEPPOL Participant ID accurate.
 </Tip>
+
+## Row actions
+
+- **Edit** opens the vendor form to change the details or toggle status.
+- **Delete** removes the vendor. Documents already issued are unaffected.
+
+## Related
+
+- [Self-billing](/en/self-billing/self-billing) — issue documents on a supplier's behalf.
+- [Customers](/en/master-data/customers) — the buyers on your sales documents.

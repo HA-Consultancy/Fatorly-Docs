@@ -33,11 +33,11 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 20 | Reports         | Downloads               | /reports/downloads                 | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 21 | Reports         | Scheduled Reports       | /reports/schedules                 | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 22 | Reports         | Submission Failures     | /submissions/failed                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 23 | Master Data     | Items                   | /items                             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 24 | Master Data     | Customers               | /customers                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 25 | Master Data     | Vendors                 | /vendors                           | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 26 | Master Data     | Payment Methods         | /payment-methods                   | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 27 | Master Data     | Files Library           | /files                             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 23 | Master Data     | Items                   | /items                             | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 24 | Master Data     | Customers               | /customers                         | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 25 | Master Data     | Vendors                 | /vendors                           | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 26 | Master Data     | Payment Methods         | /payment-methods                   | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 27 | Master Data     | Files Library           | /files                             | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 28 | Company Settings| Company Profile         | /settings/company-profile          | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 29 | Company Settings| Branding & Documents    | /settings/company-profile?tab=branding | ⬜ | ⬜ | ⬜   | ⬜       | ⬜ |
 | 30 | Company Settings| Company Configuration   | /settings/company-profile?tab=configuration | ⬜ | ⬜ | ⬜ | ⬜    | ⬜ |
