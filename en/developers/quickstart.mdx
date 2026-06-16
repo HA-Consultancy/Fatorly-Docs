@@ -1,0 +1,143 @@
+---
+title: "Quickstart"
+description: "From an API key to your first submitted invoice — create master data, POST /invoices with a full JSON example, and read the response."
+---
+
+This guide takes you end to end: get an API key, make sure your customer and
+items exist, then create an invoice with `POST /invoices`.
+
+<Steps>
+  <Step title="Get an API key">
+    Create a key under **Settings → Integrations → API Keys** and copy the
+    `fat_…` secret. See [Authentication](/en/developers/authentication). Send it
+    in the `X-Api-Key` header on every request.
+  </Step>
+
+  <Step title="Create a customer and items (if needed)">
+    You can reference the buyer and items inline on the invoice, or create them
+    first as master data so they're reusable. Each create is a `POST` and **must**
+    carry an `Idempotency-Key` header:
+
+    ```bash
+    curl https://integration.fatorly.com/v1/customers \
+      -H "X-Api-Key: fat_your_key_here" \
+      -H "Content-Type: application/json" \
+      -H "Idempotency-Key: customer-acme-001" \
+      -d '{
+        "name": "ACME Trading LLC",
+        "trn": "100123456700003",
+        "participantId": "iso6523-actorid-upis::0235:100123456700003"
+      }'
+    ```
+  </Step>
+
+  <Step title="Create the invoice">
+    `POST /invoices` with a `V1CreateInvoiceRequest` body. The example below shows
+    a tax invoice with one line, plus where the newer optional fields go —
+    `references`, `delivery`, `allowancesCharges` (document and line level),
+    line `classifications`, item identifiers, and `exemptionReasonCode`.
+
+    ```bash
+    curl https://integration.fatorly.com/v1/invoices \
+      -H "X-Api-Key: fat_your_key_here" \
+      -H "Content-Type: application/json" \
+      -H "Idempotency-Key: invoice-2026-00042" \
+      -d @invoice.json
+    ```
+
+    ```json invoice.json
+    {
+      "documentType": "Invoice",
+      "currency": "AED",
+      "issueDate": "2026-06-16",
+      "buyer": {
+        "participantId": "iso6523-actorid-upis::0235:100123456700003",
+        "name": "ACME Trading LLC",
+        "trn": "100123456700003",
+        "address": {
+          "street": "12 Sheikh Zayed Road",
+          "city": "Dubai",
+          "emirate": "Dubai",
+          "countryCode": "AE"
+        }
+      },
+      "references": [
+        { "type": "PurchaseOrder", "value": "PO-9981" }
+      ],
+      "delivery": {
+        "date": "2026-06-15",
+        "incoterms": "DAP",
+        "address": {
+          "street": "Warehouse 4, Al Quoz",
+          "city": "Dubai",
+          "countryCode": "AE"
+        }
+      },
+      "allowancesCharges": [
+        {
+          "chargeIndicator": false,
+          "amount": "50.00",
+          "reasonCode": "95",
+          "reason": "Loyalty discount"
+        }
+      ],
+      "lines": [
+        {
+          "name": "Steel bolts M8",
+          "quantity": 100,
+          "unitOfMeasure": "EA",
+          "unitPrice": "2.50",
+          "taxCategoryCode": "S",
+          "taxRate": 5,
+          "itemIdentifiers": {
+            "sellersItemIdentification": "BOLT-M8"
+          },
+          "classifications": [
+            { "listId": "UNSPSC", "code": "31161600" }
+          ],
+          "allowancesCharges": [
+            {
+              "chargeIndicator": false,
+              "amount": "10.00",
+              "reason": "Bulk discount"
+            }
+          ]
+        }
+      ]
+    }
+    ```
+
+    <Note>
+    Set `documentType` to `Invoice` for a tax invoice or `CreditNote` for a
+    credit note. A `CreditNote` also requires `precedingInvoiceNumber` (the
+    invoice it corrects). On any line whose `taxCategoryCode` is `E` (exempt), an
+    `exemptionReasonCode` is **required**.
+    </Note>
+  </Step>
+
+  <Step title="Read the response">
+    A successful create returns the document with its assigned number and status.
+    The invoice is generated, validated against PINT-AE, and submitted over
+    Peppol.
+
+    ```json
+    {
+      "id": "9f1c2b7e-…",
+      "invoiceNumber": "INV-2026-00042",
+      "documentType": "Invoice",
+      "status": "Submitted",
+      "currency": "AED",
+      "total": "252.50"
+    }
+    ```
+
+    If the request fails, you'll get a JSON error body and a status code — see
+    [Errors](/en/developers/errors).
+  </Step>
+</Steps>
+
+<Warning>
+Every `POST` **must** include an `Idempotency-Key` header. Without it the request
+is rejected with **400**. Reuse the same key when you retry so a duplicate is
+never created — see [Idempotency](/en/developers/idempotency).
+</Warning>

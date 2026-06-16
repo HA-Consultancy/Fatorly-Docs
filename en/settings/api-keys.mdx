@@ -5,11 +5,7 @@ description: "Issue and manage credentials for the Integration API."
 
 API keys let you connect your own systems (such as an ERP) to Fatorly's
 Integration API. You can scope each key to exactly the access it needs and revoke
-it at any time.
-
-<Frame>
-  <img src="/images/en/settings/api-keys-1.png" alt="Fatorly API keys" />
-</Frame>
+it at any time. Open it from **Settings → Integrations → API Keys**.
 
 ## Create an API key
 
@@ -34,7 +30,7 @@ it at any time.
 | `customers:read` / `customers:write` | Read / manage customers. |
 | `vendors:read` / `vendors:write` | Read / manage vendors. |
 | `items:read` / `items:write` | Read / manage items. |
-| `participants:read` | Look up PEPPOL participants. |
+| `participants:read` | Look up network participants. |
 | `webhooks:manage` | Manage webhook subscriptions. |
 
 ## Manage existing keys
@@ -47,3 +43,8 @@ immediately.
 The full secret is only displayed at creation time. If a key is lost or
 compromised, **Revoke** it and create a new one.
 </Warning>
+
+## Related
+
+- [API Reference](/en/developers/api-reference) — browse endpoints and make live calls.
+- [Integrations & Connectors](/en/settings/integrations) — connect QuickBooks Online.

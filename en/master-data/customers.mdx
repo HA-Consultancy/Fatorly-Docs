@@ -1,53 +1,76 @@
 ---
 title: "Customers"
-description: "Manage the customers you issue invoices to."
+description: "Maintain the buyers you issue invoices to — their tax registration, address, and contact details flow onto every document."
 ---
 
-Customers are the buyers you issue sales invoices and credit notes to. Their
-details — including VAT TRN and PEPPOL Participant ID — flow onto your invoices
-and enable electronic delivery.
+**Customers** are the buyers you issue sales invoices and credit notes to. Their
+details — legal name, VAT TRN, address, and PEPPOL Participant ID — flow onto
+your documents and enable electronic delivery. Open the page from **Master Data
+→ Customers** in the sidebar.
 
 <Frame>
-  <img src="/images/en/master-data/customers-1.png" alt="Fatorly customers list" />
+  <img src="/images/en/master-data/customers-1.png" alt="The Fatorly Customers list" />
 </Frame>
 
-## The customers list
+## The list
 
-The list shows your customers with **Search** and sortable columns. Each row has
-**Edit** and **Delete** actions. Select **Add New** to create a customer.
+Each row is one customer. The grid has these columns:
 
-## Add or edit a customer
+- **Name** — the customer's name. Select it to open the record for editing.
+- **Email** — the customer's email address.
+- **Phone** — the customer's phone number.
+- **VAT TRN** — the 15-digit UAE Tax Registration Number.
+- **Status** — **Active** or inactive.
+- **Actions** — **Edit** and **Delete**.
+
+Use the **Search** box to filter by name, and select any column header to sort.
+
+## Add a customer
+
+Select **Add New** in the top-right to open the customer form, which is grouped
+into cards.
 
 <Steps>
-  <Step title="Open the form">
-    Select **Add New**, or **Edit** on an existing customer.
+  <Step title="Identity">
+    Enter the legal **Name (English)** and **Name (Arabic)**. Both are required
+    for e-invoice compliance.
   </Step>
-  <Step title="Fill in the details">
-    Complete the sections below, then select **Save**.
+  <Step title="Contact Information">
+    Optionally add the **Email**, **Phone**, **VAT TRN**, and **Contact
+    Person**. The VAT TRN must be a valid 15-digit UAE tax registration number.
+  </Step>
+  <Step title="Address">
+    Enter the **Address**, **City**, and **Country** (which defaults to `AE`).
+  </Step>
+  <Step title="PEPPOL Network">
+    Optionally add the **PEPPOL Participant ID** to enable direct electronic
+    delivery to this customer.
+  </Step>
+  <Step title="Save">
+    New customers are **Active** by default. Select **Save**.
   </Step>
 </Steps>
 
-<Frame>
-  <img src="/images/en/master-data/customers-form-1.png" alt="Fatorly new customer form" />
-</Frame>
-
-### Fields
-
-| Section | Field | Required | Description |
-|---|---|---|---|
-| Identity | Name (English) | Yes | Legal name in English. |
-| Identity | Name (Arabic) | Yes | Legal name in Arabic. |
-| Contact | Email | No | Customer email. |
-| Contact | Phone | No | Customer phone. |
-| Contact | VAT TRN | No | 15-digit UAE Tax Registration Number. |
-| Contact | Contact Person | No | Main contact name. |
-| Address | Address, City, Country | No | Physical location. Country defaults to `AE`. |
-| PEPPOL Network | PEPPOL Participant ID | No | Electronic exchange identifier for direct delivery. |
-
-New customers are **Active** by default.
+<Note>
+A **Tax Invoice** requires a customer that has a valid VAT TRN — without it the
+document cannot be issued as a tax invoice. Address and City are also required
+for Peppol submission; documents will fail validation without them.
+</Note>
 
 <Tip>
-- Both English and Arabic names are required for e-invoice compliance.
-- The VAT TRN must be a valid 15-digit UAE tax registration number.
-- Add the PEPPOL Participant ID to enable direct electronic invoice delivery.
+Add the **PEPPOL Participant ID** (for example
+`iso6523-actorid-upis::0211:XXXXXXXXXX`) to deliver invoices to the customer
+directly over the Peppol network.
 </Tip>
+
+## Row actions
+
+- **Edit** opens the customer form to change the details or toggle status.
+- **Delete** removes the customer. Documents already issued are unaffected.
+
+## Related
+
+- [Create or Edit an Invoice](/en/invoicing/create-invoice) — selecting a
+  customer fills the buyer details on the document.
+- [Vendors](/en/master-data/vendors) — the suppliers on your purchase and
+  self-billing documents.

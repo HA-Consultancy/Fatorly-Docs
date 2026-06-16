@@ -1,0 +1,60 @@
+---
+title: "Authentication"
+description: "Create an API key, send it in the X-Api-Key header, and keep it secure."
+---
+
+Every request to the Integration API is authenticated with an **API key** sent in
+the **`X-Api-Key`** header. There are no other credentials to manage — no OAuth
+flow, no tokens to refresh.
+
+## Create an API key
+
+API keys are created inside the platform, not over the API.
+
+<Steps>
+  <Step title="Open API Keys">
+    In the app, go to **Settings → Integrations → API Keys**
+    (`/settings/integration/api-keys`). See [API Keys](/en/settings/api-keys) for
+    the full settings reference.
+  </Step>
+  <Step title="Name and scope the key">
+    Give the key a descriptive name and select only the scopes the integration
+    needs (for example `invoices:write`).
+  </Step>
+  <Step title="Copy the secret">
+    Select **Create API Key**. The secret — which looks like `fat_…` — is shown
+    **only once**. Copy it immediately and store it securely; you won't be able to
+    see it again.
+  </Step>
+</Steps>
+
+## Send the key
+
+Add the key to the `X-Api-Key` header on every request:
+
+```bash
+curl https://integration.fatorly.com/v1/invoices \
+  -H "X-Api-Key: fat_your_key_here" \
+  -H "Content-Type: application/json"
+```
+
+A missing or invalid key returns **401 Unauthorized** — see
+[Errors](/en/developers/errors).
+
+## Key scope and security
+
+- **One company per key.** Each key is scoped to a single company/tenant. To
+  integrate with several companies, create one key per company.
+- **Least privilege.** Grant only the scopes the integration uses.
+- **Treat it like a password.** Store keys in a secret manager, never in source
+  control or client-side code.
+
+<Warning>
+If a key is lost or compromised, **revoke** it under **Settings → Integrations →
+API Keys** and create a new one. Revocation takes effect immediately.
+</Warning>
+
+## Next
+
+- [Quickstart](/en/developers/quickstart) — create your first invoice.
+- [Idempotency](/en/developers/idempotency) — make writes safe to retry.

@@ -1,0 +1,142 @@
+---
+title: "البدء السريع"
+description: "من مفتاح API إلى أول فاتورة مُرسَلة — أنشئ البيانات المرجعية، ونفّذ POST /invoices مع مثال JSON كامل، واقرأ الاستجابة."
+---
+
+ينقلك هذا الدليل من البداية إلى النهاية: احصل على مفتاح API، وتأكّد من وجود العميل
+والأصناف، ثم أنشئ فاتورة عبر `POST /invoices`.
+
+<Steps>
+  <Step title="احصل على مفتاح API">
+    أنشئ مفتاحًا من **الإعدادات ← التكاملات ← مفاتيح API** وانسخ السرّ `fat_…`.
+    راجع [المصادقة](/ar/developers/authentication). أرسله في ترويسة `X-Api-Key`
+    في كل طلب.
+  </Step>
+
+  <Step title="أنشئ عميلًا وأصنافًا (عند الحاجة)">
+    يمكنك الإشارة إلى المشتري والأصناف ضمن الفاتورة مباشرة، أو إنشاؤها أولًا
+    كبيانات مرجعية لتصبح قابلة لإعادة الاستخدام. كل عملية إنشاء هي `POST` و**يجب**
+    أن تحمل ترويسة `Idempotency-Key`:
+
+    ```bash
+    curl https://integration.fatorly.com/v1/customers \
+      -H "X-Api-Key: fat_your_key_here" \
+      -H "Content-Type: application/json" \
+      -H "Idempotency-Key: customer-acme-001" \
+      -d '{
+        "name": "ACME Trading LLC",
+        "trn": "100123456700003",
+        "participantId": "iso6523-actorid-upis::0235:100123456700003"
+      }'
+    ```
+  </Step>
+
+  <Step title="أنشئ الفاتورة">
+    نفّذ `POST /invoices` بجسم `V1CreateInvoiceRequest`. يوضّح المثال أدناه فاتورة
+    ضريبية بسطر واحد، إضافة إلى مواضع الحقول الاختيارية الأحدث — `references`
+    و`delivery` و`allowancesCharges` (على مستوى المستند والسطر) و`classifications`
+    على مستوى السطر ومعرّفات الصنف و`exemptionReasonCode`.
+
+    ```bash
+    curl https://integration.fatorly.com/v1/invoices \
+      -H "X-Api-Key: fat_your_key_here" \
+      -H "Content-Type: application/json" \
+      -H "Idempotency-Key: invoice-2026-00042" \
+      -d @invoice.json
+    ```
+
+    ```json invoice.json
+    {
+      "documentType": "Invoice",
+      "currency": "AED",
+      "issueDate": "2026-06-16",
+      "buyer": {
+        "participantId": "iso6523-actorid-upis::0235:100123456700003",
+        "name": "ACME Trading LLC",
+        "trn": "100123456700003",
+        "address": {
+          "street": "12 Sheikh Zayed Road",
+          "city": "Dubai",
+          "emirate": "Dubai",
+          "countryCode": "AE"
+        }
+      },
+      "references": [
+        { "type": "PurchaseOrder", "value": "PO-9981" }
+      ],
+      "delivery": {
+        "date": "2026-06-15",
+        "incoterms": "DAP",
+        "address": {
+          "street": "Warehouse 4, Al Quoz",
+          "city": "Dubai",
+          "countryCode": "AE"
+        }
+      },
+      "allowancesCharges": [
+        {
+          "chargeIndicator": false,
+          "amount": "50.00",
+          "reasonCode": "95",
+          "reason": "Loyalty discount"
+        }
+      ],
+      "lines": [
+        {
+          "name": "Steel bolts M8",
+          "quantity": 100,
+          "unitOfMeasure": "EA",
+          "unitPrice": "2.50",
+          "taxCategoryCode": "S",
+          "taxRate": 5,
+          "itemIdentifiers": {
+            "sellersItemIdentification": "BOLT-M8"
+          },
+          "classifications": [
+            { "listId": "UNSPSC", "code": "31161600" }
+          ],
+          "allowancesCharges": [
+            {
+              "chargeIndicator": false,
+              "amount": "10.00",
+              "reason": "Bulk discount"
+            }
+          ]
+        }
+      ]
+    }
+    ```
+
+    <Note>
+    اضبط `documentType` على `Invoice` للفاتورة الضريبية أو `CreditNote` لإشعار
+    الخصم. كما يتطلّب `CreditNote` الحقل `precedingInvoiceNumber` (رقم الفاتورة
+    التي يصحّحها). وعلى أي سطر يكون فيه `taxCategoryCode` بقيمة `E` (معفى)، يكون
+    `exemptionReasonCode` **مطلوبًا**.
+    </Note>
+  </Step>
+
+  <Step title="اقرأ الاستجابة">
+    تُعيد عملية الإنشاء الناجحة المستند مع رقمه المخصّص وحالته. تُولَّد الفاتورة،
+    ويُتحقَّق منها وفق PINT-AE، وتُرسَل عبر Peppol.
+
+    ```json
+    {
+      "id": "9f1c2b7e-…",
+      "invoiceNumber": "INV-2026-00042",
+      "documentType": "Invoice",
+      "status": "Submitted",
+      "currency": "AED",
+      "total": "252.50"
+    }
+    ```
+
+    إذا فشل الطلب، ستحصل على جسم خطأ بصيغة JSON ورمز حالة — راجع
+    [الأخطاء](/ar/developers/errors).
+  </Step>
+</Steps>
+
+<Warning>
+**يجب** أن يتضمّن كل `POST` ترويسة `Idempotency-Key`. وبدونها يُرفَض الطلب برمز
+**400**. أعِد استخدام المفتاح نفسه عند إعادة المحاولة كي لا تُنشأ نسخة مكرّرة —
+راجع [معرّف عدم التكرار](/ar/developers/idempotency).
+</Warning>

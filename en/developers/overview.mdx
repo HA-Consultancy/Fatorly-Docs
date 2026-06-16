@@ -1,0 +1,63 @@
+---
+title: "Integration API Overview"
+description: "What the Fatorly Integration API is, its base URL and versioning, and a map of the developer guides and API reference."
+---
+
+The **Fatorly Integration API** lets your own systems — an ERP, a billing
+platform, or a custom back office — create and submit e-invoices on the Peppol
+network programmatically. It **complements the web app**: anything you do in the
+invoice editor, you can also do over the API, so you can automate high-volume or
+back-office workflows while still using the platform's UI for ad-hoc work.
+
+## Base URL
+
+All requests go to the versioned base URL:
+
+```
+https://integration.fatorly.com/v1
+```
+
+## Versioning
+
+The current version is **v1**, carried in the URL path (`/v1`). Pinning to a
+version keeps your integration stable as the platform evolves.
+
+<Note>
+The API is **outbound only**. You create and submit documents you issue (tax
+invoices and credit notes). **Received** documents arrive over Peppol and cannot
+be created through the API.
+</Note>
+
+## What you can do
+
+- Create tax invoices and credit notes with `POST /invoices`.
+- Manage the master data you invoice against — customers and items.
+- Look up Peppol network participants.
+
+Every write is protected by an **`Idempotency-Key`** header so retries never
+create duplicates — see [Idempotency](/en/developers/idempotency).
+
+## Guide map
+
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="key" href="/en/developers/authentication">
+    Create an API key and send it in the `X-Api-Key` header.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/en/developers/quickstart">
+    Go from a key to your first submitted invoice end to end.
+  </Card>
+  <Card title="Idempotency" icon="arrows-rotate" href="/en/developers/idempotency">
+    Make every write safe to retry with `Idempotency-Key`.
+  </Card>
+  <Card title="Errors" icon="triangle-exclamation" href="/en/developers/errors">
+    The error model and the common status codes you'll see.
+  </Card>
+</CardGroup>
+
+For the full, interactive endpoint catalogue with live "Try it" calls, open the
+[API Reference](/en/developers/api-reference).
+
+## Start here
+
+1. [Authentication](/en/developers/authentication) — get a key.
+2. [Quickstart](/en/developers/quickstart) — create and submit an invoice.
