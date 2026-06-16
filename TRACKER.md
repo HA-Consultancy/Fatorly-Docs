@@ -28,11 +28,11 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 15 | Invoice Editor  | Create / Edit Invoice   | /invoices/new                      | ✅ | ✅ | 🟡       | ⬜       | ⬜ |
 | 16 | Invoice Editor  | Invoice Field Reference | (reference)                        | ✅ | ✅ | 🟡       | ⬜       | ⬜ |
 | 17 | Invoice Editor  | View Invoice            | /invoices/:id                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 18 | Reports         | Reports Overview        | /reports                           | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 19 | Reports         | Running a Report        | /reports/:reportKey                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 20 | Reports         | Downloads               | /reports/downloads                 | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 21 | Reports         | Scheduled Reports       | /reports/schedules                 | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 22 | Reports         | Submission Failures     | /submissions/failed                | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 18 | Reports         | Reports Overview        | /reports                           | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 19 | Reports         | Running a Report        | /reports/:reportKey                | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
+| 20 | Reports         | Downloads               | /reports/downloads                 | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 21 | Reports         | Scheduled Reports       | /reports/schedules                 | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 22 | Reports         | Submission Failures     | /submissions/failed                | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 23 | Master Data     | Items                   | /items                             | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 24 | Master Data     | Customers               | /customers                         | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 25 | Master Data     | Vendors                 | /vendors                           | ✅ | ✅ | ✅       | ⬜       | ⬜ |
