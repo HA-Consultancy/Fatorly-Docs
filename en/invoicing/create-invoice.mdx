@@ -1,83 +1,114 @@
 ---
 title: "Create or Edit an Invoice"
-description: "Build a tax-compliant invoice or credit note line by line."
+description: "A step-by-step walkthrough of the redesigned editor for invoices and credit notes."
 ---
 
 The invoice editor is where you create and edit documents — tax invoices,
-commercial invoices, and credit notes. It calculates VAT and totals as you go and
-validates against UAE PINT rules.
+commercial invoices, and credit notes. It calculates VAT and totals **live as you
+type** and validates each document against the UAE PINT (PINT&nbsp;AE) rules, so
+problems surface before you submit.
 
 <Frame>
-  <img src="/images/en/invoicing/create-invoice-1.png" alt="Fatorly new invoice editor" />
+  <img src="/images/en/invoicing/create-invoice-1.png" alt="The empty Fatorly invoice editor" />
 </Frame>
 
 ## Start a new document
 
-You can start from several places:
+You can launch the editor from several places:
 
-- **Dashboard → Quick Actions** (e.g. New Tax Invoice).
-- **Sales Invoices → New Tax Invoice / New Commercial Invoice**.
+- **Dashboard → Quick Actions** (e.g. *New Tax Invoice*).
+- **Sales → New Tax Invoice / New Commercial Invoice**.
 - **Sales Credit Notes → New Credit Note**.
 
-The document **category** (Tax Invoice, Commercial Invoice, Credit Note) and
-**direction** (Outbound / Inbound) are shown at the top.
+The header bar at the top shows the document **category** (for example
+*Tax Invoice*) and its **direction** (*Outbound*), alongside the **Cancel** and
+**Save as Draft** buttons.
 
 ## Fill in the document
 
+Work top to bottom. The first three areas — **Invoice Details**, **Select
+Customer**, and **Line Items** — are always visible. The three sections below
+them are optional and collapsible.
+
 <Steps>
-  <Step title="Set invoice details">
-    The **Invoice #** is assigned from your [number series](/en/settings/number-series).
-    Set the **Currency** (defaults to AED), **Issue Date**, and optional **Due Date**.
+  <Step title="Set the invoice details">
+    In the **Invoice Details** card, the **Invoice #** is assigned automatically
+    from your [number series](/en/settings/number-series) (for example
+    `INV-2026-00017`) and is read-only. Set the **Currency** (defaults to `AED`),
+    the **Issue Date** (defaults to today), and the **Due Date**.
   </Step>
   <Step title="Select the customer">
-    Choose the buyer from **Select Customer**. Manage these in
-    [Customers](/en/master-data/customers).
+    In the **Select Customer** card, search the dropdown and pick the buyer. The
+    card then shows the chosen customer's name, TRN, and address. Manage these
+    records in [Customers](/en/master-data/customers).
   </Step>
   <Step title="Add line items">
-    Select **Add Line**, then pick an **Item** (this fills the name, unit of
-    measure, and unit price). Set **Quantity**, adjust **Unit Price** or
-    **Discount** if needed, and choose the **VAT Group**.
+    In the **Line Items** table, choose **Add Line** for each product or service.
+
+    - Pick an **Item** to prefill the name, **Unit of Measure**, **Unit Price**,
+      and the item's default tax category and classification (set these up in
+      [Items](/en/master-data/items)). You can also type a free **Description**.
+    - Set the **Quantity** and adjust the **Unit Price** if needed. Use the
+      **Discount / charge** button on a line to add a per-line allowance or charge.
+    - Choose the **VAT Group**: `S` (5%), `Z` (0%), `E` (0%), `O` (0%),
+      `AE` (0%), or `L` (0%). New lines default to the **5% standard** group (`S`).
+    - When the VAT Group is **`E` (Exempt)**, an **Exemption Reason** field
+      appears and is required.
+
+    The **Line Net** is calculated for you as quantity × unit price, minus
+    allowances plus charges.
   </Step>
-  <Step title="Set payment & notes">
-    Optionally choose a **Payment Method** and **Payment Terms**, and add
-    **Customer Notes / Remarks**.
+  <Step title="Optional — Charges & Allowances">
+    Expand **Charges & Allowances** to add discounts or charges that apply to the
+    **whole document** rather than a single line. Choose **Add discount / charge**,
+    set whether it is an allowance or a charge, the amount, the tax category, and
+    a reason.
   </Step>
-  <Step title="Save">
-    Select **Save as Draft**. The document is saved and can be reviewed, then
+  <Step title="Optional — References & Delivery">
+    Expand **References & Delivery** to record a **buyer reference**; purchase
+    order, sales order, contract, project, despatch, or receipt references;
+    **attachments** (from your [Files library](/en/files/files-library), an
+    upload, or a URL); and **delivery** details — address, actual delivery date,
+    and Incoterms. The delivery **Country**, **Emirate**, and **City** are
+    dropdowns.
+  </Step>
+  <Step title="Optional — Payment & Notes">
+    Expand **Payment & Notes** to choose a **Payment Method** and **Payment
+    Terms**, and to add **Customer Notes / Remarks** that appear on the document.
+  </Step>
+  <Step title="Review the totals">
+    The **Totals** panel updates live and is read-only: **Total Exclusive of
+    VAT**, **Total Net**, **Total VAT** broken down per category (for example
+    `S 5%`), and **Total Payable** in the document currency (`AED`).
+  </Step>
+  <Step title="Save as draft">
+    Choose **Save as Draft**. The document is saved and can be reviewed, then
     submitted from the [invoice view](/en/invoicing/view-invoice).
   </Step>
 </Steps>
 
-## Line item columns
-
-| Column | Description |
-|---|---|
-| Item Name | The product or service (from your item catalog). |
-| Description | Optional line description. |
-| Quantity | Number of units. |
-| Unit of Measure | UN/CEFACT unit (e.g. `EA`). |
-| Unit Price | Price per unit. |
-| Discount | Optional line discount. |
-| VAT Group | Tax category and rate (see below). |
-| Line Net | Calculated net amount for the line. |
-
-### VAT groups
-
-| Code | Rate | Meaning |
-|---|---|---|
-| S | 5% | Standard-rated |
-| Z | 0% | Zero-rated |
-| E | 0% | Exempt |
-| O | 0% | Out of scope |
-| AE | 0% | Reverse charge |
-| L | 0% | Special / other |
-
-## Totals
-
-The **Totals** panel updates live: Total Exclusive of VAT, Total Net, Total VAT
-(broken down per VAT group), and **Total Payable** in your currency.
+<Frame>
+  <img src="/images/en/invoicing/create-invoice-2.png" alt="The invoice editor with the Charges & Allowances and References & Delivery sections expanded" />
+</Frame>
 
 <Tip>
-Item, customer, and payment-method dropdowns are populated from your
-[master data](/en/master-data/items) — set those up first to speed up invoicing.
+The three optional sections — **Charges & Allowances**, **References &
+Delivery**, and **Payment & Notes** — are collapsible. Each shows a
+**filled-count badge** so you can see at a glance how much it contains, and a
+section **auto-expands** if it holds a field with a validation error. Fields have
+visible labels, and non-obvious ones carry an info "i" tooltip.
 </Tip>
+
+<Note>
+This page is a walkthrough. For the full list of **every field** — whether it is
+required and the values it accepts — see the
+[Invoice Field Reference](/en/invoicing/invoice-field-reference).
+</Note>
+
+## Related
+
+- [Items](/en/master-data/items) — the catalog that prefills line items.
+- [Customers](/en/master-data/customers) — the buyers you select.
+- [Number Series](/en/settings/number-series) — where invoice numbers come from.
+- [Files](/en/files/files-library) — the library you attach documents from.
+- [View an Invoice](/en/invoicing/view-invoice) — what happens after you save.
