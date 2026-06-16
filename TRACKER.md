@@ -38,19 +38,19 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 25 | Master Data     | Vendors                 | /vendors                           | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 26 | Master Data     | Payment Methods         | /payment-methods                   | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 27 | Master Data     | Files Library           | /files                             | ✅ | ✅ | ✅       | ⬜       | ⬜ |
-| 28 | Company Settings| Company Profile         | /settings/company-profile          | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 29 | Company Settings| Branding & Documents    | /settings/company-profile?tab=branding | ⬜ | ⬜ | ⬜   | ⬜       | ⬜ |
-| 30 | Company Settings| Company Configuration   | /settings/company-profile?tab=configuration | ⬜ | ⬜ | ⬜ | ⬜    | ⬜ |
-| 31 | Company Settings| Number Series           | /settings/company-profile?tab=numberseries | ⬜ | ⬜ | ⬜ | ⬜     | ⬜ |
-| 32 | Company Settings| Team & Auditors         | /settings/company-profile?tab=team | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 33 | Company Settings| Usage & Statistics      | /settings/company-profile?tab=usage | ⬜ | ⬜ | ⬜      | ⬜       | ⬜ |
-| 34 | Company Settings| Support Access          | /settings/company-profile?tab=support | ⬜ | ⬜ | ⬜    | ⬜       | ⬜ |
-| 35 | Company Settings| Linking / My Companies  | /settings/my-companies             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 36 | Company Settings| Leave Fatorly (Offboarding) | /settings/company-profile?tab=offboarding | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 37 | Company Settings| Integrations            | /settings/integrations             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 38 | Company Settings| API Keys                | /settings/integration/api-keys     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 28 | Company Settings| Company Profile         | /settings/company-profile          | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 29 | Company Settings| Branding & Documents    | /settings/company-profile?tab=branding | ✅ | ✅ | ⬜   | ⬜       | ⬜ |
+| 30 | Company Settings| Company Configuration   | /settings/company-profile?tab=configuration | ✅ | ✅ | ⬜ | ⬜    | ⬜ |
+| 31 | Company Settings| Number Series           | /settings/company-profile?tab=numberseries | ✅ | ✅ | ⬜ | ⬜     | ⬜ |
+| 32 | Company Settings| Team & Auditors         | /settings/company-profile?tab=team | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
+| 33 | Company Settings| Usage & Statistics      | /settings/company-profile?tab=usage | ✅ | ✅ | ⬜      | ⬜       | ⬜ |
+| 34 | Company Settings| Support Access          | /settings/company-profile?tab=support | ✅ | ✅ | ⬜    | ⬜       | ⬜ |
+| 35 | Company Settings| Linking / My Companies  | /settings/my-companies             | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
+| 36 | Company Settings| Leave Fatorly (Offboarding) | /settings/company-profile?tab=offboarding | ✅ | ✅ | ⬜ | ⬜ | ⬜ |
+| 37 | Company Settings| Integrations            | /settings/integrations             | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
+| 38 | Company Settings| API Keys                | /settings/integration/api-keys     | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
 | 39 | Account         | Profile                 | /profile                           | ✅ | ✅ | ✅       | ⬜       | ⬜ |
-| 40 | Account         | Change Password         | /settings/change-password          | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 40 | Account         | Change Password         | /settings/change-password          | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
 | 41 | Account         | What's New              | /whats-new                         | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 42 | Multi-Company   | Switching Companies     | /select-company                    | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 43 | Auditor         | Auditor Company Selector| /auditor (read-only)               | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
