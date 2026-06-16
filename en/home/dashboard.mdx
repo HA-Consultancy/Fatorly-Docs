@@ -3,15 +3,22 @@ title: "Dashboard"
 description: "Your at-a-glance overview of invoices, VAT, and PEPPOL submission status."
 ---
 
-The dashboard is your home screen after signing in. It summarizes your invoicing
-activity — totals, VAT, submission status, and recent documents — so you can see
-the health of your e-invoicing at a glance.
+The dashboard is your home screen after signing in (route `/`). It summarizes
+your invoicing activity — totals, VAT, submission status, and what needs your
+attention — so you can see the health of your e-invoicing at a glance.
 
 <Frame>
   <img src="/images/en/home/dashboard-1.png" alt="Fatorly dashboard" />
 </Frame>
 
-## Summary cards
+## The sidebar
+
+Everything in the app is reached from the left sidebar, grouped by task:
+**Dashboard**, **Sales**, **Purchases**, **Self-billing**, **Reports**,
+**Master Data + Files**, **Company**, and **Account**. The dashboard ties these
+together with headline figures and quick links.
+
+## KPI cards
 
 The top of the dashboard shows headline figures across all your documents:
 
@@ -21,17 +28,23 @@ The top of the dashboard shows headline figures across all your documents:
 | Total VAT | Total VAT, with the net value below it. |
 | Submitted to PEPPOL | Value successfully delivered over the PEPPOL network. |
 
-Below these, three **this-month** comparison cards (Invoices, Submitted, VAT)
-show the current month versus the previous month.
+Alongside these, **this-month** comparison cards (Invoices, Submitted, VAT)
+show the current month versus the previous month so you can spot trends.
 
 ## Status tiles
 
-Four tiles break activity down by submission stage:
+Tiles break activity down by submission stage so you always know where your
+documents stand:
 
 - **Total Invoices** — every document and its combined value.
 - **Submitted to PEPPOL** — documents sent or delivered.
 - **Pending Submission** — drafts and validated documents not yet sent.
 - **Failed** — documents that need attention.
+
+## Due & overdue
+
+A **Due & overdue** report tile highlights invoices that are approaching their
+due date or already past it, so payments and submissions don't slip.
 
 <Tip>
 A **"X overdue invoices"** banner appears when you have draft or validated
@@ -46,7 +59,7 @@ invoices issued more than 30 days ago. Select **Review** to open them.
   Invoice, Tax Credit Note, Commercial Credit Note, Self-billed Tax Invoice,
   Self-billed Tax Credit Note.
 
-## Recent activity, top customers & quick actions
+## Recent activity, top customers & quick navigation
 
 - **Recent Activity** lists your latest documents; select any row to open it.
   **View All** goes to [Sales Invoices](/en/sales/sales-invoices).
@@ -56,4 +69,5 @@ invoices issued more than 30 days ago. Select **Review** to open them.
 
 ## Export
 
-Select **Export CSV** to download your documents as a spreadsheet.
+Select **Export CSV** to download your documents as a spreadsheet. For deeper
+analysis, head to **Reports** in the sidebar.

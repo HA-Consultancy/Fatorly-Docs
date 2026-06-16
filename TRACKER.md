@@ -11,15 +11,15 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 
 | #  | Section         | Page                    | Route                              | EN | AR | Shots EN | Shots AR | Reviewed |
 |----|-----------------|-------------------------|------------------------------------|----|----|----------|----------|----------|
-| 1  | Getting Started | Introduction            | (overview)                         | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
-| 2  | Getting Started | Register                | /register                          | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 3  | Getting Started | Login                   | /login                             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 4  | Getting Started | Forgot Password         | /forgot-password                   | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 5  | Getting Started | Reset Password          | /reset-password                    | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 6  | Getting Started | Verify Email            | /verify-email                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 1  | Getting Started | Introduction            | (overview)                         | ✅ | ✅ | n/a      | n/a      | ⬜ |
+| 2  | Getting Started | Register                | /register                          | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 3  | Getting Started | Login                   | /login                             | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 4  | Getting Started | Forgot Password         | /forgot-password                   | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 5  | Getting Started | Reset Password          | /reset-password                    | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 6  | Getting Started | Verify Email            | /verify-email                      | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 7  | Getting Started | Onboarding Wizard       | /onboarding                        | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 8  | Getting Started | MFA Setup               | /settings/mfa                      | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 9  | Dashboard       | Dashboard               | /                                  | ⬜ | ⬜ | 🟡       | ⬜       | ⬜ |
+| 9  | Dashboard       | Dashboard               | /                                  | ✅ | ✅ | 🟡       | ⬜       | ⬜ |
 | 10 | Sales           | Sales Invoices          | /sales/invoices                    | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 11 | Sales           | Sales Credit Notes      | /sales/credit-notes                | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 12 | Purchases       | Purchase Invoices       | /purchases/invoices                | ✅ | ✅ | ✅       | ⬜       | ⬜ |
@@ -49,10 +49,10 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 36 | Company Settings| Leave Fatorly (Offboarding) | /settings/company-profile?tab=offboarding | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 37 | Company Settings| Integrations            | /settings/integrations             | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 38 | Company Settings| API Keys                | /settings/integration/api-keys     | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 39 | Account         | Profile                 | /profile                           | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 39 | Account         | Profile                 | /profile                           | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 40 | Account         | Change Password         | /settings/change-password          | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 41 | Account         | What's New              | /whats-new                         | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
-| 42 | Multi-Company   | Switching Companies     | /select-company                    | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
+| 41 | Account         | What's New              | /whats-new                         | ✅ | ✅ | ✅       | ⬜       | ⬜ |
+| 42 | Multi-Company   | Switching Companies     | /select-company                    | ✅ | ✅ | ✅       | ⬜       | ⬜ |
 | 43 | Auditor         | Auditor Company Selector| /auditor (read-only)               | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 44 | Auditor         | Auditing a Company      | (read-only views)                  | ⬜ | ⬜ | ⬜       | ⬜       | ⬜ |
 | 45 | Developers      | Overview                | (guide)                            | ⬜ | ⬜ | n/a      | n/a      | ⬜ |
