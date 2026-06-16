@@ -24,39 +24,70 @@
             "en/getting-started/onboarding",
             "en/getting-started/mfa-setup"
           ]},
-          { "group": "Home", "pages": [
-            "en/home/dashboard",
-            "en/home/whats-new"
+          { "group": "Dashboard", "pages": [
+            "en/home/dashboard"
+          ]},
+          { "group": "Sales", "pages": [
+            "en/sales/sales-invoices",
+            "en/sales/sales-credit-notes"
+          ]},
+          { "group": "Purchases", "pages": [
+            "en/purchases/purchase-invoices",
+            "en/purchases/purchase-credit-notes"
+          ]},
+          { "group": "Self-Billing", "pages": [
+            "en/self-billing/self-billing"
+          ]},
+          { "group": "The Invoice Editor", "pages": [
+            "en/invoicing/create-invoice",
+            "en/invoicing/invoice-field-reference",
+            "en/invoicing/view-invoice"
+          ]},
+          { "group": "Reports", "pages": [
+            "en/reports/overview",
+            "en/reports/running-a-report",
+            "en/reports/downloads",
+            "en/reports/scheduled-reports",
+            "en/reports/submission-failures"
           ]},
           { "group": "Master Data", "pages": [
             "en/master-data/items",
             "en/master-data/customers",
             "en/master-data/vendors",
-            "en/master-data/payment-methods"
+            "en/master-data/payment-methods",
+            "en/files/files-library"
           ]},
-          { "group": "Invoicing", "pages": [
-            "en/invoicing/sales-invoices",
-            "en/invoicing/sales-credit-notes",
-            "en/invoicing/purchase-invoices",
-            "en/invoicing/purchase-credit-notes",
-            "en/invoicing/self-billing",
-            "en/invoicing/create-invoice",
-            "en/invoicing/view-invoice"
-          ]},
-          { "group": "Settings", "pages": [
+          { "group": "Company Settings", "pages": [
             "en/settings/company-profile",
+            "en/settings/branding-documents",
+            "en/settings/company-configuration",
             "en/settings/number-series",
-            "en/settings/company-auditors",
+            "en/settings/team-auditors",
+            "en/settings/usage",
+            "en/settings/support-access",
+            "en/settings/linking-companies",
+            "en/settings/leave-fatorly",
             "en/settings/integrations",
-            "en/settings/api-keys",
-            "en/settings/change-password"
+            "en/settings/api-keys"
           ]},
-          { "group": "Developers", "pages": [
-            "en/developers/api-reference"
+          { "group": "Account", "pages": [
+            "en/account/profile",
+            "en/settings/change-password",
+            "en/home/whats-new"
+          ]},
+          { "group": "Multi-Company", "pages": [
+            "en/multi-company/switching-companies"
           ]},
           { "group": "Auditor", "pages": [
             "en/auditor/company-selector",
             "en/auditor/auditing-a-company"
+          ]},
+          { "group": "Developers", "pages": [
+            "en/developers/overview",
+            "en/developers/authentication",
+            "en/developers/quickstart",
+            "en/developers/idempotency",
+            "en/developers/errors"
           ]}
         ]
       },
@@ -74,38 +105,69 @@
             "ar/getting-started/mfa-setup"
           ]},
           { "group": "الرئيسية", "pages": [
-            "ar/home/dashboard",
-            "ar/home/whats-new"
+            "ar/home/dashboard"
+          ]},
+          { "group": "المبيعات", "pages": [
+            "ar/sales/sales-invoices",
+            "ar/sales/sales-credit-notes"
+          ]},
+          { "group": "المشتريات", "pages": [
+            "ar/purchases/purchase-invoices",
+            "ar/purchases/purchase-credit-notes"
+          ]},
+          { "group": "الفوترة الذاتية", "pages": [
+            "ar/self-billing/self-billing"
+          ]},
+          { "group": "محرّر الفواتير", "pages": [
+            "ar/invoicing/create-invoice",
+            "ar/invoicing/invoice-field-reference",
+            "ar/invoicing/view-invoice"
+          ]},
+          { "group": "التقارير", "pages": [
+            "ar/reports/overview",
+            "ar/reports/running-a-report",
+            "ar/reports/downloads",
+            "ar/reports/scheduled-reports",
+            "ar/reports/submission-failures"
           ]},
           { "group": "البيانات الأساسية", "pages": [
             "ar/master-data/items",
             "ar/master-data/customers",
             "ar/master-data/vendors",
-            "ar/master-data/payment-methods"
+            "ar/master-data/payment-methods",
+            "ar/files/files-library"
           ]},
-          { "group": "الفوترة", "pages": [
-            "ar/invoicing/sales-invoices",
-            "ar/invoicing/sales-credit-notes",
-            "ar/invoicing/purchase-invoices",
-            "ar/invoicing/purchase-credit-notes",
-            "ar/invoicing/self-billing",
-            "ar/invoicing/create-invoice",
-            "ar/invoicing/view-invoice"
-          ]},
-          { "group": "الإعدادات", "pages": [
+          { "group": "إعدادات الشركة", "pages": [
             "ar/settings/company-profile",
+            "ar/settings/branding-documents",
+            "ar/settings/company-configuration",
             "ar/settings/number-series",
-            "ar/settings/company-auditors",
+            "ar/settings/team-auditors",
+            "ar/settings/usage",
+            "ar/settings/support-access",
+            "ar/settings/linking-companies",
+            "ar/settings/leave-fatorly",
             "ar/settings/integrations",
-            "ar/settings/api-keys",
-            "ar/settings/change-password"
+            "ar/settings/api-keys"
           ]},
-          { "group": "المطوّرون", "pages": [
-            "ar/developers/api-reference"
+          { "group": "الحساب", "pages": [
+            "ar/account/profile",
+            "ar/settings/change-password",
+            "ar/home/whats-new"
+          ]},
+          { "group": "تعدّد الشركات", "pages": [
+            "ar/multi-company/switching-companies"
           ]},
           { "group": "المدقق", "pages": [
             "ar/auditor/company-selector",
             "ar/auditor/auditing-a-company"
+          ]},
+          { "group": "المطوّرون", "pages": [
+            "ar/developers/overview",
+            "ar/developers/authentication",
+            "ar/developers/quickstart",
+            "ar/developers/idempotency",
+            "ar/developers/errors"
           ]}
         ]
       }
