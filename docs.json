@@ -40,6 +40,7 @@
           ]},
           { "group": "The Invoice Editor", "pages": [
             "en/invoicing/create-invoice",
+            "en/invoicing/import-invoices",
             "en/invoicing/invoice-field-reference",
             "en/invoicing/view-invoice"
           ]},
@@ -122,6 +123,7 @@
           ]},
           { "group": "محرّر الفواتير", "pages": [
             "ar/invoicing/create-invoice",
+            "ar/invoicing/import-invoices",
             "ar/invoicing/invoice-field-reference",
             "ar/invoicing/view-invoice"
           ]},

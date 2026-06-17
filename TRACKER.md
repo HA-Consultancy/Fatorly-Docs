@@ -61,3 +61,4 @@ A page is **done** only when EN, AR, both screenshot sets, and Reviewed are all 
 | 48 | Developers      | Idempotency             | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
 | 49 | Developers      | Errors                  | (guide)                            | ✅ | ✅ | n/a      | n/a      | ⬜ |
 | 50 | Developers      | API Reference (generated)| /developer/api-reference          | ✅ | n/a| n/a      | n/a      | ⬜ |
+| 51 | Invoice Editor  | Import Invoices from Excel | /invoices/import                 | ✅ | ✅ | ⬜       | ⬜       | ⬜ |
