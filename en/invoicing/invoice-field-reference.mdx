@@ -15,8 +15,8 @@ are **conditionally required** depending on the tax category, document type, or
 whether you start filling a related group.
 </Note>
 
-The editor is organized into a header, a line-items table, three collapsible
-sections (Charges &amp; Allowances, References &amp; Delivery, Payment &amp; Notes),
+The editor is organized into a header, a line-items table, four collapsible
+sections (Transaction Type, Charges &amp; Allowances, References &amp; Delivery, Payment &amp; Notes),
 and a live Totals panel.
 
 <Frame>
@@ -31,6 +31,9 @@ and a live Totals panel.
 | Currency | Yes | Text / selector | Defaults to `AED` | The document currency. |
 | Issue Date | Yes | Date picker | Defaults to today | The date the document is issued. |
 | Due Date | Conditional | Date picker | — | Expected for invoices; optional for credit notes. |
+| Tax Currency | Conditional | Text / read-only | Defaults to `AED` | Shown automatically when the document currency is not `AED`. UAE VAT law requires VAT amounts to also be expressed in AED; this field records the tax-reporting currency. |
+| Currency Exchange Rate | Conditional | Number | Up to 6 decimal places | Required when the document currency is not `AED`. The rate used to convert the document currency into AED. |
+| VAT Point Date | Optional | Date picker | — | The date on which VAT becomes due, if different from the issue date (BT-7). Must fall **before** the issue date. Not allowed on credit notes. |
 
 ## 2. Counterparty &amp; credit-note reference
 
@@ -39,6 +42,10 @@ and a live Totals panel.
 | Customer / Vendor | Expected | Searchable dropdown | From your [Customers](/en/master-data/customers) / [Vendors](/en/master-data/vendors) | The buyer (sales) or supplier (purchase / self-billing). Selecting one fills its name, TRN, and address. |
 | Referenced Invoice | Yes (credit notes) | Text | — | The number of the invoice this credit note corrects. |
 | Preceding Invoice Date | No | Date picker | — | The issue date of the referenced invoice. |
+| Contact Name | No | Text | — | The name of the contact person at the counterparty. Emitted on the invoice under the party's address block. |
+| Postal Code | No | Text | — | Postal / ZIP code for the counterparty address. |
+| Address Line 2 | No | Text | — | Second line of the counterparty address (suite, floor, building name, etc.). |
+| State / Emirate (Country Subentity) | No | Dropdown | UAE emirates or free text | The state, emirate, or region of the counterparty address. |
 
 <Warning>
 A **Tax Invoice** requires a counterparty that has a VAT **TRN**. A **Commercial
@@ -46,7 +53,44 @@ Invoice** is for counterparties without a TRN. The customer/vendor list is
 filtered accordingly.
 </Warning>
 
-## 3. Line items
+## 3. Transaction Type (UAE special scenarios)
+
+UAE VAT law (FTA PINT-AE code BTAE-02) recognises eight special invoice scenarios. Use the collapsible **Transaction Type** section to select the ones that apply. Each scenario tags the invoice and reveals the extra fields it legally requires. Leave the section empty for a standard tax invoice; more than one scenario can apply simultaneously.
+
+<Frame>
+  <img src="/images/en/invoicing/create-invoice-transaction-type.png" alt="Transaction Type section with two scenarios selected, showing Beneficiary ID and Principal ID fields" />
+</Frame>
+
+<Frame>
+  <img src="/images/en/invoicing/create-invoice-transaction-type-options.png" alt="The Transaction Type dropdown with all 8 UAE special scenarios listed" />
+</Frame>
+
+### Scenarios
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Free Trade Zone | Conditional | Checkbox / toggle | — | Supply involving a UAE Designated Zone. Selecting this reveals the **Beneficiary ID** field (the buyer's customs or establishment identifier), which is required. |
+| Deemed Supply | Conditional | Checkbox / toggle | — | A supply treated as made without consideration. When selected, payment means and due date are not required. |
+| Profit Margin Scheme | Conditional | Checkbox / toggle | — | VAT is charged on the profit margin only (e.g. used goods). All line tax categories must use the margin-scheme VAT category when this is selected. |
+| Summary Invoice | Conditional | Checkbox / toggle | — | One invoice covering multiple supplies over a period. Requires the **Billing Period start/end** and the **Frequency of Billing** fields. |
+| Continuous Supply | Conditional | Checkbox / toggle | — | An ongoing supply billed periodically. Requires the **Frequency of Billing** field. |
+| Disclosed Agent Billing | Conditional | Checkbox / toggle | — | An agent invoices on behalf of a disclosed principal. Requires the **Principal ID** field, which must differ from the seller's VAT TRN. |
+| E-commerce Supplies | Conditional | Checkbox / toggle | — | Supply made via an e-commerce platform. Requires the **delivery address** fields (under References &amp; Delivery). |
+| Exports | Conditional | Checkbox / toggle | — | Supply exported outside the UAE. Requires the **delivery address** with a non-UAE country. |
+
+### Dependent fields
+
+The following fields appear only when the relevant scenario is selected.
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Beneficiary ID | Conditional | Text | — | Shown for **Free Trade Zone**. The buyer's customs establishment or FTZ participant identifier. Required when the scenario is active. |
+| Principal ID | Conditional | Text | — | Shown for **Disclosed Agent Billing**. The VAT registration number (TRN) of the principal on whose behalf the agent is billing. Must differ from the seller's own TRN. |
+| Frequency of Billing | Conditional | Dropdown | `DLY` Daily · `WKY` Weekly · `Q15` Fortnightly · `MTH` Monthly · `Q45` Every 45 days · `Q60` Every 60 days · `QTR` Quarterly · `YRL` Yearly · `HYR` Half-yearly · `OTH` Other | Required for **Summary Invoice** and **Continuous Supply**. When `OTH` is selected, a **Note** explaining the frequency is required. |
+| Billing Period Start | Conditional | Date picker | — | The start date of the billing period. Required for **Summary Invoice**. |
+| Billing Period End | Conditional | Date picker | — | The end date of the billing period. Required for **Summary Invoice**. |
+
+## 4. Line items
 
 Each row in the **Line Items** table is one invoiced product or service.
 
@@ -84,6 +128,20 @@ Per-line product identifiers, used by the buyer's systems and standards bodies.
 | Standard item ID | No | Text | A registered standard identifier such as a GTIN barcode (BT-157). |
 | Standard scheme ID | No | Text | The scheme of the standard ID (BT-157-1). Use `0160` for a GTIN / GS1 number. |
 
+### Item type &amp; commodity codes
+
+Per-line fields that classify whether the line is a good or a service and supply the commodity / service accounting code required for certain tax treatments.
+
+| Field | Required | Control | Allowed / default | Notes |
+|---|---|---|---|---|
+| Item Type | No | Dropdown | `G` Goods · `S` Services · `B` Both | Drives which commodity codes are required. When set to `S` or `B`, a Service Accounting Code is expected. When set to `G` or `B` on a reverse-charge (`AE`) line, a Goods Nature Code is expected. |
+| Service Accounting Code (SAC) | Conditional | Text | — | Required when Item Type is `S` (Services) or `B` (Both). A UN/SPSC or equivalent code identifying the type of service. |
+| Goods Nature Code | Conditional | Text | — | Required for reverse-charge (`AE`) lines involving goods. Identifies the nature of the goods (e.g. gold, diamonds, electronic devices) per FTA guidance. |
+
+<Frame>
+  <img src="/images/en/invoicing/create-invoice-line-classification.png" alt="Expanded line item showing Item Type, item identifiers, and Item classifications" />
+</Frame>
+
 ### Item classifications (repeatable)
 
 Per-line commodity classification codes.
@@ -94,7 +152,7 @@ Per-line commodity classification codes.
 | List (scheme) | Per row | Dropdown | Valid UNTDID&nbsp;7143 code | The classification scheme the code belongs to — e.g. `HS` (Harmonized System), `TSR` (UNSPSC), `SRV`, `STJ`. |
 | Version | No | Text | — | The scheme version, if relevant. |
 
-## 4. Charges &amp; Allowances (document level)
+## 5. Charges &amp; Allowances (document level)
 
 A collapsible section for discounts and charges that apply to the **whole
 document** (not a single line). Repeatable.
@@ -109,7 +167,7 @@ document** (not a single line). Repeatable.
 | Tax Rate | Yes | Number | Default `5` | The VAT rate (%). |
 | Exemption Reason | Conditional | Dropdown | FTA exemption reason codes | Required when the Tax Category is `E` and the amount is greater than zero. |
 
-## 5. References &amp; Delivery
+## 6. References &amp; Delivery
 
 A collapsible section for related documents and delivery details.
 
@@ -152,7 +210,7 @@ A public link is generated for each attached file once the document is created.
 | State / region | No | Dropdown | UAE emirates | Delivery emirate / region. |
 | Country | Conditional | Dropdown | ISO country, default `AE` | Required once any delivery address field is filled. |
 
-## 6. Payment &amp; Notes
+## 7. Payment &amp; Notes
 
 A collapsible section for payment details and notes.
 
@@ -162,7 +220,7 @@ A collapsible section for payment details and notes.
 | Payment Terms | No | Dropdown | Due on Receipt, COD, Net 7/15/30/45/60/90 | The agreed payment terms. |
 | Customer Notes / Remarks | No | Text area | — | Free-text notes shown on the document. |
 
-## 7. Totals
+## 8. Totals
 
 The **Totals** panel is calculated automatically and is read-only.
 

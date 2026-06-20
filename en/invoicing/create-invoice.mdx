@@ -54,9 +54,28 @@ them are optional and collapsible.
       `AE` (0%), or `L` (0%). New lines default to the **5% standard** group (`S`).
     - When the VAT Group is **`E` (Exempt)**, an **Exemption Reason** field
       appears and is required.
+    - Expand the line to set **Item Type** (`G` Goods, `S` Services, or `B` Both).
+      This reveals the **Service Accounting Code (SAC)** field for service lines,
+      and the **Goods Nature Code** for reverse-charge (`AE`) goods lines.
+
+    <Frame>
+      <img src="/images/en/invoicing/create-invoice-line-classification.png" alt="Expanded line item showing Item Type selector, item identifiers, and Item classifications" />
+    </Frame>
 
     The **Line Net** is calculated for you as quantity × unit price, minus
     allowances plus charges.
+  </Step>
+  <Step title="Optional — Special UAE transaction types">
+    Expand the **Transaction Type** section if this invoice involves one or more
+    UAE special scenarios — for example a Free Trade Zone supply, a Disclosed
+    Agent Billing arrangement, a Summary Invoice, or an Export. Tick the relevant
+    scenarios; the form reveals the additional fields each one legally requires
+    (such as **Beneficiary ID**, **Principal ID**, or a **Billing Period**). Leave
+    the section empty for a standard tax invoice.
+
+    <Frame>
+      <img src="/images/en/invoicing/create-invoice-transaction-type.png" alt="Transaction Type section with two scenarios selected and their required fields visible" />
+    </Frame>
   </Step>
   <Step title="Optional — Charges & Allowances">
     Expand **Charges & Allowances** to add discounts or charges that apply to the
