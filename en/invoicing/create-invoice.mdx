@@ -35,7 +35,9 @@ them are optional and collapsible.
     In the **Invoice Details** card, the **Invoice #** is assigned automatically
     from your [number series](/en/settings/number-series) (for example
     `INV-2026-00017`) and is read-only. Set the **Currency** (defaults to `AED`),
-    the **Issue Date** (defaults to today), and the **Due Date**.
+    the **Issue Date** (defaults to today), and the **Due Date**. If VAT becomes
+    due on a date different from the issue date, use the optional **VAT Point Date**
+    date picker (BT-7; not available on credit notes).
   </Step>
   <Step title="Select the customer">
     In the **Select Customer** card, search the dropdown and pick the buyer. The
@@ -94,6 +96,9 @@ them are optional and collapsible.
   <Step title="Optional — Payment & Notes">
     Expand **Payment & Notes** to choose a **Payment Method** and **Payment
     Terms**, and to add **Customer Notes / Remarks** that appear on the document.
+    You can also enter a **Bank Account / IBAN** (required for credit-transfer
+    payments) and a **Prepaid Amount** (BT-113) if the buyer has already made an
+    advance payment.
   </Step>
   <Step title="Review the totals">
     The **Totals** panel updates live and is read-only: **Total Exclusive of

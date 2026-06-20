@@ -1065,6 +1065,12 @@
             "default": null,
             "nullable": true
           },
+          "prepaidAmount": {
+            "type": "number",
+            "description": "Amount already paid in advance (BT-113). Reduces the amount payable on the invoice.",
+            "default": null,
+            "nullable": true
+          },
           "billingPeriodStart": {
             "type": "string",
             "format": "date",

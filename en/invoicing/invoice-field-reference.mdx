@@ -35,6 +35,14 @@ and a live Totals panel.
 | Currency Exchange Rate | Conditional | Number | Up to 6 decimal places | Required when the document currency is not `AED`. The rate used to convert the document currency into AED. |
 | VAT Point Date | Optional | Date picker | — | The date on which VAT becomes due, if different from the issue date (BT-7). Must fall **before** the issue date. Not allowed on credit notes. |
 
+## Supplier fields (from Company Profile)
+
+The following supplier field is configured once in **Settings → Company Configuration → General** and is automatically emitted on every invoice you create.
+
+| Field | Required | Control | Notes |
+|---|---|---|---|
+| Company Legal Form | No | Text (Company Profile) | The supplier's legal form, e.g. "Merchant", "LLC" (IBT-033). Set on the [Company Profile](/en/settings/company-profile) General tab; cannot be edited per-invoice. |
+
 ## 2. Counterparty &amp; credit-note reference
 
 | Field | Required | Control | Allowed / default | Notes |
@@ -218,6 +226,8 @@ A collapsible section for payment details and notes.
 |---|---|---|---|---|
 | Payment Method | No | Dropdown | From your [Payment Methods](/en/master-data/payment-methods) | How the invoice is to be paid. |
 | Payment Terms | No | Dropdown | Due on Receipt, COD, Net 7/15/30/45/60/90 | The agreed payment terms. |
+| Bank Account / IBAN | Conditional | Text | — | Supplier bank account or IBAN for credit-transfer payment (cbc:ID under cac:FinancialAccount). Required under UAE rules when the payment method is bank/credit transfer (code 30). |
+| Prepaid Amount | No | Number | — | Amount already paid in advance (BT-113). Reduces the final amount payable on the invoice. |
 | Customer Notes / Remarks | No | Text area | — | Free-text notes shown on the document. |
 
 ## 8. Totals
