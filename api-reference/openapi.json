@@ -848,6 +848,24 @@
           "countryCode": {
             "type": "string",
             "nullable": true
+          },
+          "line2": {
+            "type": "string",
+            "description": "Second address line (BT-51 / building number, suite, floor).",
+            "default": null,
+            "nullable": true
+          },
+          "countrySubentity": {
+            "type": "string",
+            "description": "State, emirate, or province code (BT-54 / cbc:CountrySubentity).",
+            "default": null,
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Postal / ZIP code (BT-53 / cbc:PostalZone).",
+            "default": null,
+            "nullable": true
           }
         },
         "nullable": true
@@ -987,6 +1005,86 @@
           },
           "delivery": {
             "$ref": "#/components/schemas/V1Delivery"
+          },
+          "transactionType": {
+            "$ref": "#/components/schemas/V1TransactionType"
+          },
+          "beneficiaryId": {
+            "type": "string",
+            "description": "Beneficiary ID (BTAE-01). Required by the platform when transactionType.freeTradeZone is true.",
+            "default": null,
+            "nullable": true
+          },
+          "principalId": {
+            "type": "string",
+            "description": "Principal / Disclosed-Agent ID (BTAE-14). Required when transactionType.disclosedAgentBilling is true.",
+            "default": null,
+            "nullable": true
+          },
+          "billingFrequencyCode": {
+            "type": "string",
+            "description": "Billing frequency code (IBT-020). Required for summaryInvoice and continuousSupply transaction types.",
+            "default": null,
+            "nullable": true
+          },
+          "taxCurrencyCode": {
+            "type": "string",
+            "description": "Tax currency code (ibr-140-ae). Always \"AED\" when invoice currency differs from AED.",
+            "default": null,
+            "nullable": true
+          },
+          "currencyExchangeRate": {
+            "type": "number",
+            "format": "double",
+            "description": "Exchange rate: AED per 1 unit of the invoice currency (BTAE-04 / ibr-159-ae). Required when currency is not AED. Maximum 6 decimal places.",
+            "default": null,
+            "nullable": true
+          },
+          "paymentMode": {
+            "type": "string",
+            "description": "Payment means type code (BT-81 / cbc:PaymentMeansCode), e.g. \"10\" cash, \"30\" credit transfer, \"48\" card.",
+            "default": null,
+            "nullable": true
+          },
+          "paymentTerms": {
+            "type": "string",
+            "description": "Free-text payment terms note (BT-20 / cbc:Note under cac:PaymentTerms).",
+            "default": null,
+            "nullable": true
+          },
+          "paymentBankAccount": {
+            "type": "string",
+            "description": "Bank account identifier for payment (cbc:ID under cac:FinancialAccount), e.g. IBAN.",
+            "default": null,
+            "nullable": true
+          },
+          "vatPointDate": {
+            "type": "string",
+            "format": "date",
+            "description": "VAT point date (BT-7 / ibr-141-ae). Must be before issueDate; not allowed on credit notes.",
+            "default": null,
+            "nullable": true
+          },
+          "billingPeriodStart": {
+            "type": "string",
+            "format": "date",
+            "description": "Start of the billing period (IBG-14 / ibr-138-ae). Required when transactionType.summaryInvoice is true.",
+            "default": null,
+            "nullable": true
+          },
+          "billingPeriodEnd": {
+            "type": "string",
+            "format": "date",
+            "description": "End of the billing period (IBG-14). Required when transactionType.summaryInvoice is true.",
+            "default": null,
+            "nullable": true
+          },
+          "precedingInvoiceIssueDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Issue date of the original invoice being credited (BT-26). Used on credit notes.",
+            "default": null,
+            "nullable": true
           }
         }
       },
@@ -1065,6 +1163,30 @@
           "isActive": {
             "type": "boolean",
             "default": true
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Postal / ZIP code for the customer's address.",
+            "default": null,
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "description": "Second line of the customer's address (building number, suite, floor).",
+            "default": null,
+            "nullable": true
+          },
+          "stateProvince": {
+            "type": "string",
+            "description": "State, emirate, or province of the customer.",
+            "default": null,
+            "nullable": true
+          },
+          "companyRegistrationNumber": {
+            "type": "string",
+            "description": "Company registration number (e.g. trade licence number) for the customer.",
+            "default": null,
+            "nullable": true
           }
         }
       },
@@ -1196,6 +1318,24 @@
             },
             "default": null,
             "nullable": true
+          },
+          "itemTypeCode": {
+            "type": "string",
+            "description": "Item type code (BTAE-13): \"G\" Goods, \"S\" Services, \"B\" Both. Emitted as cac:CommodityClassification/cbc:CommodityCode.",
+            "default": null,
+            "nullable": true
+          },
+          "serviceAccountingCode": {
+            "type": "string",
+            "description": "Service accounting code (BTAE-17 / ibr-185-ae). Required when itemTypeCode is \"S\" or \"B\". Emitted as cac:AdditionalItemIdentification/cbc:ID[@schemeID=\"SAC\"].",
+            "default": null,
+            "nullable": true
+          },
+          "goodsNatureCode": {
+            "type": "string",
+            "description": "Goods/services nature code (BTAE-09 / ibr-006-ae). Required when line VAT category is \"AE\" (Reverse Charge). Must be from the GoodsType codelist.",
+            "default": null,
+            "nullable": true
           }
         }
       },
@@ -1310,6 +1450,42 @@
           },
           "address": {
             "$ref": "#/components/schemas/V1Address"
+          },
+          "contactPhone": {
+            "type": "string",
+            "description": "Party contact telephone number (cbc:Telephone under cac:Contact).",
+            "default": null,
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Party contact email address (cbc:ElectronicMail under cac:Contact).",
+            "default": null,
+            "nullable": true
+          },
+          "contactName": {
+            "type": "string",
+            "description": "Party contact person name (cbc:Name under cac:Contact).",
+            "default": null,
+            "nullable": true
+          },
+          "legalRegistrationNumber": {
+            "type": "string",
+            "description": "Company legal registration number (cbc:CompanyID under cac:PartyLegalEntity).",
+            "default": null,
+            "nullable": true
+          },
+          "legalRegistrationType": {
+            "type": "string",
+            "description": "Scheme or type of the legal registration number (e.g. \"CRN\", \"TIN\").",
+            "default": null,
+            "nullable": true
+          },
+          "authorityName": {
+            "type": "string",
+            "description": "Name of the authority that issued the legal registration (cbc:RegistrationName under cac:PartyLegalEntity).",
+            "default": null,
+            "nullable": true
           }
         }
       },
@@ -1352,6 +1528,42 @@
             "type": "string",
             "default": null,
             "nullable": true
+          },
+          "purchaseOrderSchemeId": {
+            "type": "string",
+            "description": "Scheme ID for the purchase order reference (e.g. \"0088\" for EAN).",
+            "default": null,
+            "nullable": true
+          },
+          "contractSchemeId": {
+            "type": "string",
+            "description": "Scheme ID for the contract reference.",
+            "default": null,
+            "nullable": true
+          },
+          "salesOrderSchemeId": {
+            "type": "string",
+            "description": "Scheme ID for the sales order reference.",
+            "default": null,
+            "nullable": true
+          },
+          "projectSchemeId": {
+            "type": "string",
+            "description": "Scheme ID for the project reference.",
+            "default": null,
+            "nullable": true
+          },
+          "despatchSchemeId": {
+            "type": "string",
+            "description": "Scheme ID for the despatch advice reference.",
+            "default": null,
+            "nullable": true
+          },
+          "receiptSchemeId": {
+            "type": "string",
+            "description": "Scheme ID for the receipt advice reference.",
+            "default": null,
+            "nullable": true
           }
         },
         "nullable": true
@@ -1365,6 +1577,54 @@
           "taxAmount": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "default": null,
+        "nullable": true
+      },
+      "V1TransactionType": {
+        "type": "object",
+        "description": "UAE transaction-type flags (BTAE-02 / ProfileExecutionID). Each boolean maps to one bit in the 8-character binary string emitted by the platform. Omit the object entirely (or pass all false) for a standard invoice (\"00000000\").",
+        "properties": {
+          "freeTradeZone": {
+            "type": "boolean",
+            "description": "Bit 1 — Free Trade Zone supply.",
+            "default": false
+          },
+          "deemedSupply": {
+            "type": "boolean",
+            "description": "Bit 2 — Deemed supply.",
+            "default": false
+          },
+          "profitMargin": {
+            "type": "boolean",
+            "description": "Bit 3 — Profit margin scheme.",
+            "default": false
+          },
+          "summaryInvoice": {
+            "type": "boolean",
+            "description": "Bit 4 — Summary invoice covering a billing period. Requires billingPeriodStart and billingPeriodEnd.",
+            "default": false
+          },
+          "continuousSupply": {
+            "type": "boolean",
+            "description": "Bit 5 — Continuous supply. Requires billingFrequencyCode.",
+            "default": false
+          },
+          "disclosedAgentBilling": {
+            "type": "boolean",
+            "description": "Bit 6 — Disclosed agent billing. Requires principalId.",
+            "default": false
+          },
+          "ecommerce": {
+            "type": "boolean",
+            "description": "Bit 7 — E-commerce supply.",
+            "default": false
+          },
+          "exports": {
+            "type": "boolean",
+            "description": "Bit 8 — Export supply.",
+            "default": false
           }
         },
         "default": null,
@@ -1427,6 +1687,30 @@
           "isActive": {
             "type": "boolean",
             "default": true
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Postal / ZIP code for the vendor's address.",
+            "default": null,
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "description": "Second line of the vendor's address (building number, suite, floor).",
+            "default": null,
+            "nullable": true
+          },
+          "stateProvince": {
+            "type": "string",
+            "description": "State, emirate, or province of the vendor.",
+            "default": null,
+            "nullable": true
+          },
+          "companyRegistrationNumber": {
+            "type": "string",
+            "description": "Company registration number (e.g. trade licence number) for the vendor.",
+            "default": null,
+            "nullable": true
           }
         }
       }
