@@ -1,19 +1,35 @@
 ---
 title: "Leave Fatorly"
-description: "Request to close your account and leave Fatorly — what happens to your data and your network participant."
+description: "Request to close your account or move to another provider — download your data, keep your participant ID portable, and understand what happens to your account."
 ---
 
 The **Leave** tab of [Company Configuration](/en/settings/company-profile) is where
-you start the process of leaving Fatorly. Open it from
+you download your data and start the process of leaving Fatorly. Open it from
 **Company → Company Configuration → Leave**.
 
 <Note>
-Leaving is an **assisted** process. You begin the request here, and our support
-team works with you to complete it — including handing over what you need to keep
-and move to another provider. It is not an instant, one-click deletion.
+Leaving is an **assisted** process. You begin the request here and our support team
+works with you to complete it — but you can **download your own data at any time**
+without waiting for anyone. It is not an instant, one-click deletion.
 </Note>
 
-## Starting a request
+## Download your data (any time)
+
+You don't have to be leaving to take a copy of your records. On the **Leave** tab,
+select **Download my data** to get a ZIP bundle containing:
+
+- **`manifest.csv`** — a row for every invoice (number, direction, status,
+  counterparty, dates, amounts, and the network message ID).
+- **`invoices/`** — the UBL XML for every document you **sent**.
+- **`README.txt`** — a short guide to the bundle.
+
+<Tip>
+This is your data and it's always available — keep a copy whenever you need one for
+your own records or for an accountant. Inbound documents you **received** are kept
+at the access point under the retention rules below; ask support if you need copies.
+</Tip>
+
+## Starting a request to leave
 
 <Steps>
   <Step title="Open the Leave tab">
@@ -25,36 +41,63 @@ and move to another provider. It is not an instant, one-click deletion.
   </Step>
   <Step title="Submit">
     Submit the request. Our team picks it up and contacts you to complete the
-    offboarding steps.
+    remaining steps.
   </Step>
 </Steps>
 
-## What happens to your data
+After you submit, the **Leave** tab shows the current state of your request:
 
-When you leave, you'll be helped to take your records with you, and your invoices
-are kept available to you in a read-only / export form so you can meet your
-record-keeping obligations.
+- **Under review** — we've received it and will be in touch. You are guaranteed to
+  be able to leave by the date shown, whatever happens with the review.
+- **Exit approved** — we've approved your departure and are processing it. If you're
+  moving to another provider, your migration key appears here (see below).
+- **Retained** — the request was closed and your account stays active (for example,
+  after we resolved the reason you wanted to leave).
 
-<Note>
-UAE businesses must retain tax records for a regulatory minimum period. Your
-historical documents remain available for export during offboarding so you can
-keep compliant copies. **TODO: verify** the exact retention period and format with
-support before relying on a specific figure.
-</Note>
+## Moving to another provider (migration key)
 
-## What happens to your network participant
+If your company is registered on the e-invoicing network, leaving doesn't mean
+losing your participant identity. Once your exit is approved, a **migration key**
+appears on the **Leave** tab.
 
-If your company is registered on the e-invoicing network, leaving doesn't have to
-mean losing your participant identity. As part of offboarding you can be issued a
-**migration key** that lets another provider take over your existing participant
-ID, so you can keep receiving e-invoices at the same address with your new
-provider.
+<Steps>
+  <Step title="Copy your migration key">
+    On the **Leave** tab, copy the migration key shown under **Your migration key**.
+  </Step>
+  <Step title="Give it to your new provider">
+    Hand the key to the provider you're moving to. They use it to take over your
+    existing participant ID.
+  </Step>
+</Steps>
 
-<Tip>
-If you're moving to another provider rather than stopping e-invoicing entirely,
-mention that when you start your request — the migration key keeps your
-participant ID portable.
-</Tip>
+Your participant ID is preserved, so you keep receiving e-invoices at the same
+address with your new provider — only the behind-the-scenes routing changes.
+
+<Warning>
+Keep your migration key private and share it only with your new provider. Anyone
+with the key could take over your participant ID.
+</Warning>
+
+## What happens to your account
+
+When your exit is completed:
+
+- **If you moved to another provider**, we hand your participant ID over to them and
+  close your Fatorly account. Your subscription ends (billing stops) and your account
+  becomes **read-only / export-only** — you can still sign in to view and download
+  your historical invoices.
+- **If you left the network entirely**, your participant is removed from the network
+  and your account is closed the same way — read-only / export-only, subscription
+  ended.
+
+In both cases your invoices are **never deleted** — they're kept for the retention
+period below so you can stay compliant.
+
+## Data retention
+
+UAE businesses must retain tax records for a regulatory minimum. Your historical
+documents are kept for **5 years** and remain available to export (via **Download my
+data** above) even after your account is closed, so you can keep compliant copies.
 
 ## Related
 
